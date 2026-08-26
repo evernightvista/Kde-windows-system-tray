@@ -20,7 +20,8 @@
   <img
     width="400"
     alt="Windows Modern System Tray and Action Centre on KDE Plasma"
-    src="https://github.com/user-attachments/assets/4f3f2d95-46ea-460a-a779-ecf9e808ae63"
+    src="<https://github.com/user-attachments/assets/eef42836-b658-4a9e-95a9-32ac0cc1380b />
+"
   />
 </p>
 
