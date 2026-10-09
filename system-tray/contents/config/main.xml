@@ -94,16 +94,18 @@
     </entry>
     <entry name="quickSettingsOrder" type="StringList">
       <label>Canonical ordering of the Action Panel's Quick Settings tiles, as an ordered list of stable tile identifiers. Drag-reordering the tiles in the Action Panel updates this. Unknown/duplicate identifiers are dropped and any missing known identifiers are appended automatically.</label>
-      <default>network,bluetooth,airplane,batterySaver,nightLight,colorScheme,dnd,micMute,hotspot</default>
+      <default>network,bluetooth,airplane,batterySaver,nightLight,dnd,micMute,hotspot</default>
     </entry>
     <entry name="showKeyboardBrightness" type="Bool">
       <default>true</default>
     </entry>
     <entry name="darkTheme" type="String">
-      <default>org.kde.windowsmodern.dark</default>
+      <label>Name of the Plasma color scheme to switch to when entering dark mode. Must be a name resolvable by plasma-apply-colorscheme (i.e. a file in share/color-schemes/&lt;name&gt;.colors). Breeze Dark ships with every Plasma 6 install.</label>
+      <default>Breeze Dark</default>
     </entry>
     <entry name="lightTheme" type="String">
-      <default>org.kde.windowsmodern.light</default>
+      <label>Name of the Plasma color scheme to switch to when entering light mode. Must be a name resolvable by plasma-apply-colorscheme (i.e. a file in share/color-schemes/&lt;name&gt;.colors). Breeze Light ships with every Plasma 6 install.</label>
+      <default>Breeze Light</default>
     </entry>
   </group>
 

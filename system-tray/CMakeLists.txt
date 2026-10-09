@@ -366,3 +366,61 @@ ecm_target_qml_sources(org.kde.windowsmodern.systemtray
         "${CMAKE_CURRENT_SOURCE_DIR}/contents/ui/components/volume/InputDeviceSection.qml"
         "${CMAKE_CURRENT_SOURCE_DIR}/contents/ui/components/volume/VolumeMixerSection.qml"
 )
+
+# ------------------------------------------------------------------------------
+# Translations
+#
+# Compile .po → .mo with msgfmt and install them into the system locale
+# directory (<localedir>/<lang>/LC_MESSAGES/<domain>.mo). The RPM spec uses
+# %find_lang to discover and own these files automatically.
+#
+# The translation domain matches TRANSLATION_DOMAIN above so KI18n at runtime
+# loads the right catalog.
+# ------------------------------------------------------------------------------
+
+set(TRANSLATION_DOMAIN "plasma_applet_org.kde.windowsmodern.systemtray")
+
+# Find the gettext msgfmt compiler. It ships with the gettext package.
+find_program(MSGFMT_EXECUTABLE msgfmt)
+
+if(MSGFMT_EXECUTABLE)
+    file(GLOB PO_FILES
+        "${CMAKE_CURRENT_SOURCE_DIR}/po/*/${TRANSLATION_DOMAIN}.po"
+    )
+
+    foreach(PO_FILE ${PO_FILES})
+        # Derive the language code from the po/<lang>/ directory name.
+        get_filename_component(PO_LANG "${PO_FILE}" DIRECTORY)
+        get_filename_component(PO_LANG "${PO_LANG}" NAME)
+
+        set(MO_FILE "${CMAKE_CURRENT_BINARY_DIR}/po/${PO_LANG}/${TRANSLATION_DOMAIN}.mo")
+
+        add_custom_command(
+            OUTPUT "${MO_FILE}"
+            COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/po/${PO_LANG}"
+            COMMAND "${MSGFMT_EXECUTABLE}" -o "${MO_FILE}" "${PO_FILE}"
+            DEPENDS "${PO_FILE}"
+            COMMENT "Compiling ${PO_LANG} translation for ${TRANSLATION_DOMAIN}"
+            VERBATIM
+        )
+        list(APPEND MO_FILES "${MO_FILE}")
+    endforeach()
+
+    if(MO_FILES)
+        add_custom_target(systemtray_translations ALL DEPENDS ${MO_FILES})
+        add_dependencies(org.kde.windowsmodern.systemtray systemtray_translations)
+
+        # Install each .mo to <localedir>/<lang>/LC_MESSAGES/<domain>.mo
+        foreach(PO_FILE ${PO_FILES})
+            get_filename_component(PO_LANG "${PO_FILE}" DIRECTORY)
+            get_filename_component(PO_LANG "${PO_LANG}" NAME)
+            install(
+                FILES "${CMAKE_CURRENT_BINARY_DIR}/po/${PO_LANG}/${TRANSLATION_DOMAIN}.mo"
+                DESTINATION "${CMAKE_INSTALL_LOCALEDIR}/${PO_LANG}/LC_MESSAGES"
+                RENAME "${TRANSLATION_DOMAIN}.mo"
+            )
+        endforeach()
+    endif()
+else()
+    message(WARNING "msgfmt not found — translations will not be compiled or installed. Install gettext to enable translation support.")
+endif()

@@ -10,6 +10,7 @@ Item {
     property alias hasBattery: batteryControl.hasBatteries
     property alias percent: batteryControl.percent
     property alias pluggedIn: batteryControl.pluggedIn
+    readonly property bool charging: batteryControl.state === BatteryControlModel.Charging || batteryControl.state === BatteryControlModel.FullyCharged
 
     implicitWidth: row.implicitWidth
     implicitHeight: 16

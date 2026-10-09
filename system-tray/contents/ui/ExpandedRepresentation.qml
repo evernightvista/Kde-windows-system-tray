@@ -21,32 +21,22 @@ import "components" as Components
 Item {
     id: popup
 
-    // Width: pinned to 360px
-    Layout.minimumWidth: 360
-    Layout.maximumWidth: 360
+    // Width and height minimums match the upstream Plasma 6 system tray
+    // (applets/systemtray/qml/ExpandedRepresentation.qml:21-22):
+    //   Layout.minimumWidth: Kirigami.Units.gridUnit * 24
+    //   Layout.minimumHeight: Kirigami.Units.gridUnit * 24
+    // No maximums are set, so the popup grows naturally with content.
+    Layout.minimumWidth: Kirigami.Units.gridUnit * 24
+    Layout.minimumHeight: Kirigami.Units.gridUnit * 24
 
-    // Height: flyouts and the hidden-items-only popup are fixed at
-    // gridUnit*24. The Action Panel case is content-driven instead of a
-    // fixed constant: actionPanel (below, in actionPanelMode) is a plain
-    // ColumnLayout whose implicitHeight is the real sum of its tiles and
-    // sliders, so binding to it directly means the popup is always exactly
-    // as tall as the Action Panel actually is — no fixed multiple that can
-    // leave empty space above/below when fewer optional tiles are enabled,
-    // and no cap that would clip it when more are. actionPanelMode itself
-    // has no competing Layout.fillHeight content once hiddenItemsView is
-    // hidden (excluded from the layout entirely while invisible), so
-    // actionPanel.implicitHeight is the only real content-height in that
-    // branch. Forward-referencing actionPanel's id here is safe: it's
-    // declared later in this same file/Component, and ids resolve
-    // reactively regardless of declaration order (container.themedActive
-    // above already relies on the same pattern).
+    // The Action Panel case is content-driven in height: actionPanel is a
+    // plain ColumnLayout whose implicitHeight is the real sum of its tiles
+    // and sliders. We don't cap it, so the popup grows as tall as needed.
     readonly property bool compactPopup: systemTrayState.activeApplet || systemTrayState.hiddenItemsRequested
-    Layout.minimumHeight: compactPopup
+    Layout.preferredHeight: compactPopup
         ? Kirigami.Units.gridUnit * 24
         : actionPanel.implicitHeight
-    Layout.maximumHeight: compactPopup
-        ? Kirigami.Units.gridUnit * 24
-        : -1 // no cap for action panel
+    Layout.maximumHeight: -1 // no cap
 
     property alias hiddenLayout: hiddenItemsView.layout
     property alias plasmoidContainer: container

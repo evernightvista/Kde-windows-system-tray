@@ -13,7 +13,9 @@
 #include <KIconColors>
 #include <KIconEngine>
 #include <KIconLoader>
+#include <KWaylandExtras>
 #include <KWindowSystem>
+#include <Plasma/Theme>
 
 #include <QApplication>
 #include <QDBusConnectionInterface>
@@ -22,6 +24,7 @@
 #include <QDBusPendingReply>
 #include <QDBusReply>
 #include <QDebug>
+#include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QIcon>
@@ -37,6 +40,11 @@
 #include <dbusmenuimporter.h>
 
 using namespace Qt::StringLiterals;
+
+// Keep a long-lived Plasma::Theme instance so we can react to theme changes
+// (the themeChanged signal is what triggers icon re-rendering for symbolic
+// icons and recolored pixmaps).
+Q_GLOBAL_STATIC(Plasma::Theme, s_theme)
 
 class PlasmaDBusMenuImporter : public DBusMenuImporter
 {
@@ -60,8 +68,15 @@ protected:
             sendClickedEvent(id);
             return;
         }
-        // In standalone build without KWaylandExtras, we just send the event
-        sendClickedEvent(id);
+        // On Wayland, request an xdg activation token and forward it to the
+        // status notifier item before sending the click event. Without this,
+        // activated menus would not get focus on Wayland and the click would
+        // be delivered to the wrong window.
+        auto tokenFuture = KWaylandExtras::xdgActivationToken(menu()->window()->windowHandle(), {});
+        tokenFuture.then(m_source, [this, id](const QString &token) {
+            m_source->provideXdgActivationToken(token);
+            sendClickedEvent(id);
+        });
     }
 
 private:
@@ -120,6 +135,10 @@ StatusNotifierItemSource::StatusNotifierItemSource(const QString &notifierItemId
             qCDebug(SYSTEM_TRAY) << "StatusNotifierItem" << notifierItemId << "is a flatpak" << instance;
         }
     }
+
+    // Reload icons when the Plasma theme changes so symbolic and recolored
+    // icons stay in sync with the active theme.
+    connect(s_theme, &Plasma::Theme::themeChanged, this, &StatusNotifierItemSource::reloadIcon);
 }
 
 StatusNotifierItemSource::~StatusNotifierItemSource()
@@ -358,6 +377,13 @@ void StatusNotifierItemSource::refreshCallback(QDBusPendingCallWatcher *call)
 
         auto loadIcon = [this, &properties, &overlay](const QString &iconKey, const QString &pixmapKey) -> std::tuple<QIcon, QString> {
             if (QString iconName = properties[iconKey].toString(); !iconName.isEmpty()) {
+                // Prefer a -symbolic variant for non-absolute icon names so
+                // single-color tray icons follow the active palette instead of
+                // shipping their own colored pixmap.
+                if (!iconName.endsWith(QStringLiteral("-symbolic")) && !QDir::isAbsolutePath(iconName)
+                    && iconLoader()->hasIcon(iconName + QStringLiteral("-symbolic"))) {
+                    iconName += QStringLiteral("-symbolic");
+                }
                 QIcon icon = QIcon(new KIconEngine(iconName, KIconColors(QPalette()), iconLoader(), {m_overlayIconName}));
                 if (!icon.isNull()) {
                     if (!overlay.isNull() && m_overlayIconName.isEmpty()) {
@@ -481,6 +507,7 @@ void StatusNotifierItemSource::overlayIcon(QIcon *icon, QIcon *overlay)
     p.end();
     tmp.addPixmap(m_iconPixmap);
 
+    // if an m_icon exactly that size wasn't found don't add it to the vector
     m_iconPixmap = icon->pixmap(KIconLoader::SizeSmallMedium, KIconLoader::SizeSmallMedium);
     if (m_iconPixmap.width() == KIconLoader::SizeSmallMedium) {
         const int size = KIconLoader::SizeSmall / 2;
@@ -490,7 +517,30 @@ void StatusNotifierItemSource::overlayIcon(QIcon *icon, QIcon *overlay)
         tmp.addPixmap(m_iconPixmap);
     }
 
+    m_iconPixmap = icon->pixmap(KIconLoader::SizeMedium, KIconLoader::SizeMedium);
+    if (m_iconPixmap.width() == KIconLoader::SizeMedium) {
+        const int size = KIconLoader::SizeSmall / 2;
+        QPainter p(&m_iconPixmap);
+        p.drawPixmap(QRect(m_iconPixmap.width() - size, m_iconPixmap.height() - size, size, size), overlay->pixmap(size, size), QRect(0, 0, size, size));
+        p.end();
+        tmp.addPixmap(m_iconPixmap);
+    }
+
+    m_iconPixmap = icon->pixmap(KIconLoader::SizeLarge, KIconLoader::SizeLarge);
+    if (m_iconPixmap.width() == KIconLoader::SizeLarge) {
+        const int size = KIconLoader::SizeSmall;
+        QPainter p(&m_iconPixmap);
+        p.drawPixmap(QRect(m_iconPixmap.width() - size, m_iconPixmap.height() - size, size, size), overlay->pixmap(size, size), QRect(0, 0, size, size));
+        p.end();
+        tmp.addPixmap(m_iconPixmap);
+    }
+
+    // We can't do 'm_icon->addPixmap()' because if 'm_icon' uses KIconEngine,
+    // it will ignore the added pixmaps. This is not a bug in KIconEngine,
+    // QIcon::addPixmap() doc says: "Custom m_icon engines are free to ignore
+    // additionally added pixmaps".
     *icon = tmp;
+    // hopefully huge and enormous not necessary right now, since it's quite costly
 }
 
 void StatusNotifierItemSource::activate(int x, int y)

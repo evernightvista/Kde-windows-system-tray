@@ -74,6 +74,7 @@ import QtQuick
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
+import org.kde.bluezqt as BluezQt
 import org.kde.plasma.plasmoid
 
 import "." as Components
@@ -87,6 +88,13 @@ Item {
     // Item's own built-in `scale` transform property, deliberately not
     // reused here).
     property real uiScale: 1
+
+    // BlueZ manager — used to determine whether the Bluetooth tile should
+    // be shown at all. If there are no Bluetooth adapters present (i.e. the
+    // machine has no Bluetooth hardware or the adapter is physically
+    // absent), the Bluetooth tile is hidden entirely rather than appearing
+    // as a non-functional "Unavailable" button taking up grid space.
+    property var btManager: BluezQt.Manager
 
     Layout.fillWidth: true
     implicitWidth: 0
@@ -117,7 +125,13 @@ Item {
     readonly property real contentPageHeight: pager.tileHeight * 2 + pager.rowSpacing
 
     // ---- Canonical tile identifiers -----------------------------------
-    readonly property var defaultOrder: ["network", "bluetooth", "airplane", "batterySaver", "nightLight", "colorScheme", "dnd", "micMute", "hotspot"]
+    // NOTE: "colorScheme" (Light/Dark Mode) was removed from the grid per
+    // the user's spec — the dark-mode toggle is no longer surfaced as a
+    // Quick Settings tile. The ColorSchemeToggle component and its
+    // configuration entry (showColorScheme) are kept for potential future
+    // use, but the tile is not registered here so the pager never
+    // instantiates it.
+    readonly property var defaultOrder: ["network", "bluetooth", "airplane", "batterySaver", "nightLight", "dnd", "micMute", "hotspot"]
 
     // Mirrors the exact visible: expression each tile was instantiated
     // with in the old ActionPanel.qml GridLayout. See the architecture
@@ -129,15 +143,17 @@ Item {
         case "network":
             return true
         case "bluetooth":
-            return true
+            // Hide the Bluetooth tile entirely when no adapter is present —
+            // i.e. the machine has no Bluetooth hardware or BlueZ is not
+            // running. This avoids showing a non-functional "Unavailable"
+            // button taking up grid space.
+            return pager.btManager.adapters.length > 0
         case "airplane":
             return Plasmoid.configuration.showAirplane
         case "batterySaver":
             return Plasmoid.configuration.showBatterySaver
         case "nightLight":
             return Plasmoid.configuration.showNightLight
-        case "colorScheme":
-            return Plasmoid.configuration.showColorScheme
         case "dnd":
             return Plasmoid.configuration.showDnd
         case "micMute":
@@ -474,12 +490,6 @@ Item {
         }
     }
     Component {
-        id: colorSchemeComp
-        Components.ColorSchemeToggle {
-            visible: Plasmoid.configuration.showColorScheme
-        }
-    }
-    Component {
         id: dndComp
         Components.DndToggle {
             visible: Plasmoid.configuration.showDnd
@@ -510,8 +520,6 @@ Item {
             return batterySaverComp
         case "nightLight":
             return nightLightComp
-        case "colorScheme":
-            return colorSchemeComp
         case "dnd":
             return dndComp
         case "micMute":

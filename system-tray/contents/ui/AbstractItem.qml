@@ -181,7 +181,7 @@ PlasmaCore.ToolTipArea {
 
             property alias container: abstractItem
             property alias inVisibleLayout: abstractItem.inVisibleLayout
-            readonly property int size: abstractItem.inVisibleLayout ? root.itemSize : Kirigami.Units.iconSizes.smallMedium
+            readonly property int size: abstractItem.inVisibleLayout ? root.itemSize : Kirigami.Units.iconSizes.medium
 
             Layout.alignment: abstractItem.inHiddenLayout
                 ? Qt.AlignLeft | Qt.AlignTop

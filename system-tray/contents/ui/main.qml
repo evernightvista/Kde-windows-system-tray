@@ -47,6 +47,12 @@ ContainmentItem {
     readonly property alias visibleLayout: tasksGrid
     readonly property alias hiddenLayout: expandedRepresentation.hiddenLayout
     readonly property bool oneRowOrColumn: tasksGrid.rowsOrColumns === 1
+    // The Windows 11–style system cluster container (Network/Volume/Battery).
+    // Exposed so CurrentItemHighLight can target it — rather than the whole
+    // tray — when the Action Panel is open, so the Plasma 6 tabbar highlight
+    // covers only the cluster (matching how a single active applet is
+    // highlighted), not every SNI icon in the tray.
+    readonly property alias clusterContainer: systemClusterContainer
 
     readonly property alias hiddenModel: hiddenModel
 
@@ -288,16 +294,17 @@ ContainmentItem {
                 id: tasksGrid
 
                 // Explicitly define grid coordinates to prevent overlapping.
-                // Three slots now share this GridLayout: ordinary items,
-                // the ExpanderArrow, and the system cluster — always in
-                // that order, with the ExpanderArrow fixed in the middle
-                // slot. Reversing only swaps which end tasksGrid vs the
-                // cluster sit on; the expander never moves. In horizontal
-                // orientation this ordering is instead handled by
-                // LayoutMirroring (see root.LayoutMirroring above), so both
-                // tasksGrid and systemCluster keep fixed columns 0 and 2.
-                Layout.row: root.vertical ? (root.reverseLayout ? 2 : 0) : 0
-                Layout.column: 0
+                // Three slots share this GridLayout: the ExpanderArrow,
+                // ordinary items (tasksGrid), and the system cluster —
+                // always in that order (left-to-right / top-to-bottom),
+                // matching the Windows 11 system tray layout where the
+                // expander is the leftmost element. Reversing swaps which
+                // end the expander vs the cluster sit on; tasksGrid stays
+                // in the middle. In horizontal orientation LayoutMirroring
+                // (see root.LayoutMirroring above) handles the visual flip,
+                // so column assignments are fixed.
+                Layout.row: root.vertical ? 1 : 0
+                Layout.column: root.vertical ? 0 : 1
 
                 Layout.alignment: Qt.AlignCenter
 
@@ -308,7 +315,7 @@ ContainmentItem {
                 verticalLayoutDirection: (root.vertical && root.reverseLayout) ? GridView.BottomToTop : GridView.TopToBottom
 
                 // The icon size to display when not using the auto-scaling setting
-                readonly property int smallIconSize: 34
+                readonly property int smallIconSize: Kirigami.Units.iconSizes.smallMedium
 
                 readonly property bool autoSize: Plasmoid.configuration.scaleIconsToFit
 
@@ -375,12 +382,13 @@ ContainmentItem {
             ExpanderArrow {
                 id: expander
 
-                // Always the middle slot: with three GridLayout cells the
-                // expander no longer needs to move when reverseLayout
-                // flips, only tasksGrid and systemCluster trade places
-                // around it.
-                Layout.row: root.vertical ? 1 : 0
-                Layout.column: root.vertical ? 0 : 1
+                // The expander is the leftmost (or topmost) slot, matching
+                // the Windows 11 system tray layout. For vertical panels,
+                // reverseLayout moves it to the bottom instead. In
+                // horizontal orientation LayoutMirroring handles the
+                // visual flip, so the column is always 0.
+                Layout.row: root.vertical ? (root.reverseLayout ? 2 : 0) : 0
+                Layout.column: root.vertical ? 0 : 0
 
                 Layout.fillWidth: vertical
                 Layout.fillHeight: !vertical
@@ -390,8 +398,9 @@ ContainmentItem {
             }
 
             // The Windows 11–style system cluster: Network, Volume and
-            // Battery, always contiguous and immediately beside the
-            // ExpanderArrow, in that fixed order. A lightweight Grid
+            // Battery, always contiguous at the far end of the tray
+            // (rightmost in horizontal, bottom in vertical), in that
+            // fixed order. A lightweight Grid
             // positioner (not a GridView) is enough since there are at
             // most 3 items and no virtualization/wrapping is needed; each
             // Repeater below contributes 0 or 1 delegate depending on
@@ -427,19 +436,22 @@ ContainmentItem {
 
                 // One continuous rounded surface behind the whole cluster,
                 // Windows 11 taskbar style: invisible normally, a subtle
-                // highlight on hover, and a slightly stronger highlight
-                // that persists while the Action Panel is open. Declared
-                // before (so painted behind) the Grid below — plain sibling
-                // paint order rather than z, per the existing per-delegate
-                // z: x + 1 in ItemLoader.qml, so it can never end up drawn
-                // on top of an icon. It also has no input handlers of its
-                // own, so it can never intercept a click either.
+                // highlight on hover. Declared before (so painted behind)
+                // the Grid below — plain sibling paint order rather than z,
+                // per the existing per-delegate z: x + 1 in ItemLoader.qml,
+                // so it can never end up drawn on top of an icon. It also
+                // has no input handlers of its own, so it can never
+                // intercept a click either.
                 //
-                // actionPanelShowing (not systemTrayState.expanded) is used
-                // deliberately: expanded also covers Hidden Items and
-                // native/themed applet popups, neither of which should
-                // hold this highlight — only the Action Panel that this
-                // cluster itself opens should.
+                // When the Action Panel is open this is intentionally
+                // invisible (opacity 0): the Plasma 6 tabbar highlight
+                // from CurrentItemHighLight — pointed at clusterContainer
+                // via the actionPanelShowing branch in updateHighlightedItem
+                // — provides the active/selected styling for the cluster
+                // group in Plasma 6's native appearance, covering only the
+                // cluster instead of the whole tray. Drawing this filled
+                // rectangle too would double-highlight the cluster and would
+                // not match Plasma 6's tabbar look.
                 Rectangle {
                     id: systemClusterHighlight
 
@@ -453,15 +465,7 @@ ContainmentItem {
                     radius: 5
                     color: Kirigami.Theme.textColor
 
-                    opacity: {
-                        if (systemTrayState.actionPanelShowing) {
-                            return 0.12
-                        } else if (systemClusterHover.hovered) {
-                            return 0.08
-                        } else {
-                            return 0
-                        }
-                    }
+                    opacity: systemClusterHover.hovered && !systemTrayState.actionPanelShowing ? 0.08 : 0
                     Behavior on opacity {
                         NumberAnimation {
                             duration: Kirigami.Units.shortDuration

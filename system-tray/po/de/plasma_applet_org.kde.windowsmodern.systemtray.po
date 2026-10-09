@@ -1,0 +1,1000 @@
+# German translations for kde-windows-system-tray.
+# Copyright (C) 2026 This file is distributed under the LGPL-2.0-or-later license.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_org.kde.windowsmodern.systemtray\n"
+"Report-Msgid-Bugs-To: https://github.com/RaceConditionWinner/Kde-windows-system-tray/issues\n"
+"POT-Creation-Date: 2026-10-08 00:00+0000\n"
+"PO-Revision-Date: 2026-10-08 00:00+0200\n"
+"Last-Translator: KDE Windows Modern System Tray Team\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: contents/ui/config.qml:13
+msgid "General"
+msgstr "Allgemein"
+
+#: contents/ui/BackgroundAppItem.qml:76
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Quit %1"
+msgstr "%1 beenden"
+
+#: contents/ui/ExpandedRepresentation.qml:110
+#, kde-format
+msgctxt "@action:button"
+msgid "Go Back"
+msgstr "Zurück"
+
+#: contents/ui/ExpandedRepresentation.qml:123
+#, kde-format
+msgid "Status and Notifications"
+msgstr "Status und Benachrichtigungen"
+
+#: contents/ui/ExpandedRepresentation.qml:176
+#, kde-format
+msgid "More actions"
+msgstr "Weitere Aktionen"
+
+#: contents/ui/ExpandedRepresentation.qml:224
+#, kde-format
+msgid "Keep Open"
+msgstr "Offen halten"
+
+#: contents/ui/ConfigGeneral.qml:58
+#, kde-format
+msgctxt "@item:inlistbox Show this System Tray item when relevant"
+msgid "Show when relevant"
+msgstr "Bei Bedarf anzeigen"
+
+#: contents/ui/ConfigGeneral.qml:62
+#, kde-format
+msgctxt "@item:inlistbox Always show this System Tray item"
+msgid "Always show"
+msgstr "Immer anzeigen"
+
+#: contents/ui/ConfigGeneral.qml:66
+#, kde-format
+msgctxt "@item:inlistbox Show this System Tray item only in the expanded popup"
+msgid "Show only in popup"
+msgstr "Nur im Popup anzeigen"
+
+#: contents/ui/ConfigGeneral.qml:70
+#, kde-format
+msgctxt "@item:inlistbox Never show this System Tray item; disable it"
+msgid "Never show (disabled)"
+msgstr "Nie anzeigen (deaktiviert)"
+
+#: contents/ui/ConfigGeneral.qml:141
+#, kde-format
+msgid "Application Status"
+msgstr "Anwendungsstatus"
+
+#: contents/ui/ConfigGeneral.qml:143
+#, kde-format
+msgid "Communications"
+msgstr "Kommunikation"
+
+#: contents/ui/ConfigGeneral.qml:145
+#, kde-format
+msgid "System Services"
+msgstr "Systemdienste"
+
+#: contents/ui/ConfigGeneral.qml:147
+#, kde-format
+msgid "Hardware Control"
+msgstr "Hardware-Steuerung"
+
+#: contents/ui/ConfigGeneral.qml:150
+#, kde-format
+msgid "Miscellaneous"
+msgstr "Verschiedenes"
+
+#: contents/ui/ConfigGeneral.qml:187
+#, kde-format
+msgctxt "@info:usagetip"
+msgid ""
+"Look for a setting in <application>%1</application> to disable its tray icon "
+"before doing it here. Some apps’ tray icons were not designed to be "
+"disabled, and using this setting may cause them to behave unexpectedly."
+"<nl/><nl/>Use this setting at your own risk, and do not report issues to "
+"KDE or the app’s author."
+msgstr ""
+"Suchen Sie zunächst in <application>%1</application> nach einer Einstellung, "
+"um das Tray-Symbol zu deaktivieren, bevor Sie es hier tun. Einige Tray-"
+"Symbole von Anwendungen sind nicht für die Deaktivierung vorgesehen, und "
+"diese Einstellung kann zu unerwartetem Verhalten führen.<nl/><nl/>Verwenden "
+"Sie diese Einstellung auf eigenes Risiko und melden Sie keine Probleme an "
+"KDE oder den Autor der Anwendung."
+
+#: contents/ui/ConfigGeneral.qml:190
+#, kde-format
+msgctxt "@action:button"
+msgid "I understand the risks"
+msgstr "Ich kenne die Risiken"
+
+#: contents/ui/ConfigGeneral.qml:202
+#, kde-format
+msgctxt "@info:usagetip"
+msgid ""
+"Disabling the clipboard is not recommended, as it will cause copied data to "
+"be lost when the application it was copied from is closed.<nl/><nl/>Only do "
+"this if you’ve manually added a standalone Clipboard widget somewhere else, "
+"or are using a 3rd-party clipboard manager. Also, instead consider "
+"configuring the clipboard to not save history, or to only remember one "
+"item at a time."
+msgstr ""
+"Das Deaktivieren der Zwischenablage wird nicht empfohlen, da dies zum "
+"Verlust kopierter Daten führt, wenn die Anwendung geschlossen wird, aus der "
+"die Daten kopiert wurden.<nl/><nl/>Tun Sie dies nur, wenn Sie an anderer "
+"Stelle ein eigenständiges Zwischenablagen-Miniprogramm manuell hinzugefügt "
+"haben oder einen Zwischenablagen-Manager eines Drittanbieters verwenden. "
+"Ziehen Sie auch in Betracht, die Zwischenablage so zu konfigurieren, dass "
+"keine Verlauf gespeichert wird oder jeweils nur ein Element gespeichert wird."
+
+#: contents/ui/ConfigGeneral.qml:211
+#, kde-format
+msgctxt "@info:usagetip"
+msgid ""
+"Disabling the Notifications widget is not recommended, as notifications sent "
+"by apps will no longer be shown.<nl/><nl/>Only do this if you’ve manually "
+"added a standalone Notifications widget somewhere else, or are intentionally "
+"using a 3rd-party notification manager to handle notifications."
+msgstr ""
+"Das Deaktivieren des Benachrichtigungs-Miniprogramms wird nicht empfohlen, "
+"da von Anwendungen gesendete Benachrichtigungen nicht mehr angezeigt werden."
+"<nl/><nl/>Tun Sie dies nur, wenn Sie an anderer Stelle ein eigenständiges "
+"Benachrichtigungs-Miniprogramm manuell hinzugefügt haben oder absichtlich "
+"einen Benachrichtigungs-Manager eines Drittanbieters verwenden."
+
+#: contents/ui/ConfigGeneral.qml:223
+#, kde-format
+msgctxt "@item:inlistbox Icon size"
+msgid "Scale with Panel height"
+msgstr "Mit Bereichshöhe skalieren"
+
+#: contents/ui/ConfigGeneral.qml:224
+#, kde-format
+msgctxt "@item:inlistbox Icon size"
+msgid "Scale with Panel width"
+msgstr "Mit Bereichsbreite skalieren"
+
+#: contents/ui/ConfigGeneral.qml:226
+#, kde-format
+msgctxt ""
+"@label:listbox Whether the system tray icons in the Panel always stay small "
+"or scale with the Panel's size"
+msgid "Panel icon size:"
+msgstr "Bereichs-Symbolgröße:"
+
+#: contents/ui/ConfigGeneral.qml:230
+#, kde-format
+msgctxt "@item:inlistbox Icon size"
+msgid "Small"
+msgstr "Klein"
+
+#: contents/ui/ConfigGeneral.qml:250
+#, kde-format
+msgctxt "@label:listbox The spacing between system tray icons in the Panel"
+msgid "Spacing:"
+msgstr "Zwischenraum:"
+
+#: contents/ui/ConfigGeneral.qml:254
+#, kde-format
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Small"
+msgstr "Klein"
+
+#: contents/ui/ConfigGeneral.qml:258
+#, kde-format
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Normal"
+msgstr "Normal"
+
+#: contents/ui/ConfigGeneral.qml:262
+#, kde-format
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Large"
+msgstr "Groß"
+
+#: contents/ui/ConfigGeneral.qml:282
+#, kde-format
+msgctxt ""
+"@label:listbox Which direction system tray icons in the Panel emerge from "
+"the expander arrow"
+msgid "Direction:"
+msgstr "Richtung:"
+
+#: contents/ui/ConfigGeneral.qml:296
+#, kde-format
+msgid "Bottom-to-top"
+msgstr "Von unten nach oben"
+
+#: contents/ui/ConfigGeneral.qml:297
+#, kde-format
+msgid "Top-to-bottom"
+msgstr "Von oben nach unten"
+
+#: contents/ui/ConfigGeneral.qml:302
+#: contents/ui/ConfigGeneral.qml:309
+#, kde-format
+msgid "Left-to-right"
+msgstr "Von links nach rechts"
+
+#: contents/ui/ConfigGeneral.qml:303
+#: contents/ui/ConfigGeneral.qml:308
+#, kde-format
+msgid "Right-to-left"
+msgstr "Von rechts nach links"
+
+#: contents/ui/ConfigGeneral.qml:320
+#, kde-format
+msgctxt "@info:tooltip under a combobox when Touch Mode is on"
+msgid "Automatically set to Large when in Touch Mode"
+msgstr "Wird im Touch-Modus automatisch auf Groß eingestellt"
+
+#: contents/ui/ConfigGeneral.qml:345
+#, kde-format
+msgctxt "@title:column"
+msgid "Entries"
+msgstr "Einträge"
+
+#: contents/ui/ConfigGeneral.qml:349
+#, kde-format
+msgctxt "@option:check, This is referring to system tray entries"
+msgid "Always show all"
+msgstr "Immer alle anzeigen"
+
+#: contents/ui/ConfigGeneral.qml:501
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Always shown next to the expander as part of the system cluster"
+msgstr "Immer neben dem Erweiterungspfeil als Teil des System-Clusters angezeigt"
+
+#: contents/ui/ExpanderArrow.qml:25
+#, kde-format
+msgid "Show all the items in the system tray in a popup"
+msgstr "Alle Elemente der Systemabschnitt in einem Popup anzeigen"
+
+#: contents/ui/ExpanderArrow.qml:55
+#, kde-format
+msgid "Close popup"
+msgstr "Popup schließen"
+
+#: contents/ui/ExpanderArrow.qml:55
+#, kde-format
+msgid "Show hidden icons"
+msgstr "Ausgeblendete Symbole anzeigen"
+
+
+#: contents/ui/components/AirplaneToggle.qml:12
+#, kde-format
+msgid "Airplane"
+msgstr "Flugmodus"
+
+#: contents/ui/components/AirplaneToggle.qml:22
+#, kde-format
+msgid "Airplane Mode — On"
+msgstr "Flugmodus — Ein"
+
+#: contents/ui/components/AirplaneToggle.qml:22
+#, kde-format
+msgid "Airplane Mode — Off"
+msgstr "Flugmodus — Aus"
+
+#: contents/ui/components/BatteryPage.qml:14
+#, kde-format
+msgid "Battery"
+msgstr "Akku"
+
+#: contents/ui/components/BatterySaverToggle.qml:16
+#, kde-format
+msgid "Battery Saver"
+msgstr "Energiesparmodus"
+
+#: contents/ui/components/BatteryPage.qml:157
+#, kde-format
+msgid "Battery health"
+msgstr "Akkuzustand"
+
+#: contents/ui/components/BatteryPage.qml:251
+#, kde-format
+msgid "Block sleep & screen lock"
+msgstr "Ruhezustand & Bildschirmsperre blockieren"
+
+#: contents/ui/components/PowerProfilePage.qml:40
+#: contents/ui/components/BatteryPage.qml:208
+#, kde-format
+msgid "Balanced"
+msgstr "Ausgeglichen"
+
+#: contents/ui/components/BluetoothToggle.qml:13
+#: contents/ui/components/BluetoothPage.qml:13
+#, kde-format
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: contents/ui/components/BluetoothToggle.qml:33
+#, kde-format
+msgid "Bluetooth — On, not connected"
+msgstr "Bluetooth — Ein, nicht verbunden"
+
+#: contents/ui/components/BluetoothToggle.qml:30
+#, kde-format
+msgid "Bluetooth — Off"
+msgstr "Bluetooth — Aus"
+
+#: contents/ui/components/BluetoothToggle.qml:32
+#, kde-format
+msgid "Bluetooth — %1 connected"
+msgstr "Bluetooth — %1 verbunden"
+
+#: contents/ui/components/BluetoothPage.qml:15
+#, kde-format
+msgid "Bluetooth is off"
+msgstr "Bluetooth ist aus"
+
+#: contents/ui/components/BluetoothToggle.qml:54
+#, kde-format
+msgid "Bluetooth settings"
+msgstr "Bluetooth-Einstellungen"
+
+#: contents/ui/components/Footer.qml:37
+#, kde-format
+msgid "Charging — %1"
+msgstr "Laden — %1"
+
+#: contents/ui/components/BatteryPage.qml:109
+#, kde-format
+msgid "Charging"
+msgstr "Laden"
+
+#: contents/ui/components/ClipboardPage.qml:18
+#, kde-format
+msgid "Clipboard"
+msgstr "Zwischenablage"
+
+#: contents/ui/components/ClipboardPage.qml:109
+#, kde-format
+msgid "Clipboard is empty"
+msgstr "Zwischenablage ist leer"
+
+#: contents/ui/components/NetworkPage.qml:252
+#, kde-format
+msgid "Connect"
+msgstr "Verbinden"
+
+#: contents/ui/components/NetworkToggle.qml:67
+#, kde-format
+msgid "Connect to hidden network…"
+msgstr "Mit verstecktem Netzwerk verbinden…"
+
+#: contents/ui/components/NetworkPage.qml:77
+#, kde-format
+msgid "Connected, open"
+msgstr "Verbunden, offen"
+
+#: contents/ui/components/NetworkPage.qml:77
+#, kde-format
+msgid "Connected, secured"
+msgstr "Verbunden, gesichert"
+
+#: contents/ui/components/BluetoothPage.qml:109
+#, kde-format
+msgid "Connected"
+msgstr "Verbunden"
+
+#: contents/ui/components/NetworkToggle.qml:62
+#, kde-format
+msgid "Create hotspot…"
+msgstr "Hotspot erstellen…"
+
+#: contents/ui/components/ColorSchemeToggle.qml:13
+#, kde-format
+msgid "Dark Mode"
+msgstr "Dunkler Modus"
+
+#: contents/ui/components/DeviceNotifierPage.qml:19
+#, kde-format
+msgid "Devices"
+msgstr "Geräte"
+
+#: contents/ui/components/NetworkPage.qml:432
+#, kde-format
+msgid "Disconnect"
+msgstr "Trennen"
+
+#: contents/ui/components/BluetoothPage.qml:109
+#, kde-format
+msgid "Disconnected"
+msgstr "Getrennt"
+
+#: contents/ui/components/BatteryPage.qml:109
+#, kde-format
+msgid "Discharging"
+msgstr "Entladen"
+
+#: contents/ui/components/BrightnessPage.qml:80
+#, kde-format
+msgid "Display %1"
+msgstr "Bildschirm %1"
+
+#: contents/ui/components/Footer.qml:110
+#: contents/ui/components/BrightnessPage.qml:134
+#, kde-format
+msgid "Display settings"
+msgstr "Anzeigeeinstellungen"
+
+#: contents/ui/components/DndToggle.qml:13
+#, kde-format
+msgid "Do Not Disturb"
+msgstr "Nicht stören"
+
+#: contents/ui/components/DndToggle.qml:30
+#, kde-format
+msgid "Do Not Disturb — Off"
+msgstr "Nicht stören — Aus"
+
+#: contents/ui/components/DndToggle.qml:30
+#, kde-format
+msgid "Do Not Disturb — On"
+msgstr "Nicht stören — Ein"
+
+#: contents/ui/js/funcs.js:13
+#, kde-format
+msgid "Disabled"
+msgstr "Deaktiviert"
+
+#: contents/ui/components/Footer.qml:165
+#, kde-format
+msgid "Shut down"
+msgstr "Herunterfahren"
+
+#: contents/ui/components/BatteryPage.qml:109
+#, kde-format
+msgid "Fully charged"
+msgstr "Voll geladen"
+
+#: contents/ui/components/HotspotToggle.qml:15
+#, kde-format
+msgid "Hotspot"
+msgstr "Hotspot"
+
+#: contents/ui/components/HotspotToggle.qml:30
+#, kde-format
+msgid "Hotspot — Off"
+msgstr "Hotspot — Aus"
+
+#: contents/ui/components/HotspotToggle.qml:30
+#, kde-format
+msgid "Hotspot — On"
+msgstr "Hotspot — Ein"
+
+#: contents/ui/components/Footer.qml:155
+#, kde-format
+msgid "Hibernate"
+msgstr "Tiefschlaf"
+
+#: contents/ui/components/volume/InputDeviceSection.qml:19
+#, kde-format
+msgid "Input Device"
+msgstr "Eingabegerät"
+
+#: contents/ui/components/CastInvertToggle.qml:8
+#, kde-format
+msgid "Invert Colors"
+msgstr "Farben invertieren"
+
+#: contents/ui/components/CastInvertToggle.qml:22
+#, kde-format
+msgid "Invert Colors — Toggle"
+msgstr "Farben invertieren — Umschalten"
+
+#: contents/ui/components/NotificationsPage.qml:104
+#, kde-format
+msgid "Just now"
+msgstr "Gerade eben"
+
+#: contents/ui/components/NetworkToggle.qml:72
+#, kde-format
+msgid "Known networks…"
+msgstr "Bekannte Netzwerke…"
+
+#: contents/ui/components/ColorSchemeToggle.qml:13
+#, kde-format
+msgid "Light Mode"
+msgstr "Heller Modus"
+
+#: contents/ui/components/Footer.qml:140
+#, kde-format
+msgid "Lock"
+msgstr "Sperren"
+
+#: contents/ui/components/Footer.qml:145
+#, kde-format
+msgid "Log out"
+msgstr "Abmelden"
+
+#: contents/ui/components/VolumeSlider.qml:56
+#, kde-format
+msgid "Mute"
+msgstr "Stumm"
+
+#: contents/ui/components/MicMuteToggle.qml:19
+#, kde-format
+msgid "Mic Muted"
+msgstr "Mikrofon stummgeschaltet"
+
+#: contents/ui/components/MicMuteToggle.qml:19
+#, kde-format
+msgid "Mic On"
+msgstr "Mikrofon an"
+
+#: contents/ui/components/MediaControllerPage.qml:18
+#, kde-format
+msgid "Media"
+msgstr "Medien"
+
+#: contents/ui/components/MediaControllerPage.qml:22
+#, kde-format
+msgid "More media settings"
+msgstr "Weitere Medien-Einstellungen"
+
+#: contents/ui/components/BluetoothPage.qml:18
+#, kde-format
+msgid "More Bluetooth settings"
+msgstr "Weitere Bluetooth-Einstellungen"
+
+#: contents/ui/components/ClipboardPage.qml:22
+#, kde-format
+msgid "More clipboard settings"
+msgstr "Weitere Zwischenablagen-Einstellungen"
+
+#: contents/ui/components/DeviceNotifierPage.qml:23
+#, kde-format
+msgid "More device settings"
+msgstr "Weitere Geräte-Einstellungen"
+
+#: contents/ui/components/NotificationsPage.qml:22
+#, kde-format
+msgid "More notification settings"
+msgstr "Weitere Benachrichtigungseinstellungen"
+
+#: contents/ui/components/PowerProfilePage.qml:18
+#, kde-format
+msgid "More power settings"
+msgstr "Weitere Energie-Einstellungen"
+
+#: contents/ui/components/VolumePage.qml:16
+#, kde-format
+msgid "More volume settings"
+msgstr "Weitere Lautstärke-Einstellungen"
+
+#: contents/ui/components/NetworkPage.qml:18
+#, kde-format
+msgid "More Wi-Fi settings"
+msgstr "Weitere WLAN-Einstellungen"
+
+#: contents/ui/components/DeviceNotifierPage.qml:147
+#, kde-format
+msgid "Mounted"
+msgstr "Eingehängt"
+
+#: contents/ui/components/Footer.qml:130
+#, kde-format
+msgid "Notification settings"
+msgstr "Benachrichtigungseinstellungen"
+
+#: contents/ui/components/NotificationsPage.qml:80
+#, kde-format
+msgid "Notification"
+msgstr "Benachrichtigung"
+
+#: contents/ui/components/NotificationsPage.qml:123
+#, kde-format
+msgid "No notifications"
+msgstr "Keine Benachrichtigungen"
+
+#: contents/ui/components/VolumePage.qml:64
+#, kde-format
+msgid "No applications playing audio"
+msgstr "Keine Anwendungen geben Ton wieder"
+
+#: contents/ui/components/BluetoothPage.qml:15
+#, kde-format
+msgid "No devices paired"
+msgstr "Keine Geräte gekoppelt"
+
+#: contents/ui/components/DeviceNotifierPage.qml:190
+#, kde-format
+msgid "No devices connected"
+msgstr "Keine Geräte verbunden"
+
+#: contents/ui/components/volume/InputDeviceSection.qml:26
+#, kde-format
+msgid "No input device"
+msgstr "Kein Eingabegerät"
+
+#: contents/ui/components/MediaControllerPage.qml:233
+#, kde-format
+msgid "No media playing"
+msgstr "Keine Medienwiedergabe"
+
+#: contents/ui/components/NetworkPage.qml:15
+#, kde-format
+msgid "No available networks"
+msgstr "Keine verfügbaren Netzwerke"
+
+#: contents/ui/components/volume/OutputDeviceSection.qml:28
+#, kde-format
+msgid "No output device"
+msgstr "Kein Ausgabegerät"
+
+#: contents/ui/components/InhibitSleepToggle.qml:8
+#, kde-format
+msgid "No Sleep"
+msgstr "Kein Ruhezustand"
+
+#: contents/ui/components/Footer.qml:120
+#, kde-format
+msgid "Network settings"
+msgstr "Netzwerk-Einstellungen"
+
+#: contents/ui/components/NetworkPage.qml:373
+#, kde-format
+msgid "Next"
+msgstr "Weiter"
+
+#: contents/ui/components/NightLightToggle.qml:9
+#, kde-format
+msgid "Night Light"
+msgstr "Nachtlicht"
+
+#: contents/ui/components/NightLightToggle.qml:26
+#, kde-format
+msgid "Night Light — Off"
+msgstr "Nachtlicht — Aus"
+
+#: contents/ui/components/NightLightToggle.qml:25
+#, kde-format
+msgid "Night Light — On"
+msgstr "Nachtlicht — Ein"
+
+#: contents/ui/components/NightLightToggle.qml:23
+#, kde-format
+msgid "Night Light — Unavailable"
+msgstr "Nachtlicht — Nicht verfügbar"
+
+#: contents/ui/components/BrightnessPage.qml:130
+#, kde-format
+msgid "Night color settings"
+msgstr "Nachtfarben-Einstellungen"
+
+#: contents/ui/components/InhibitSleepToggle.qml:8
+#, kde-format
+msgid "Sleep Blocked"
+msgstr "Ruhezustand blockiert"
+
+#: contents/ui/components/InhibitSleepToggle.qml:58
+#, kde-format
+msgid "Sleep Allowed"
+msgstr "Ruhezustand erlaubt"
+
+#: contents/ui/components/InhibitSleepToggle.qml:58
+#, kde-format
+msgid "Sleep Inhibited"
+msgstr "Ruhezustand unterdrückt"
+
+#: contents/ui/components/js/funcs.js:18
+#, kde-format
+msgid "Offline"
+msgstr "Offline"
+
+#: contents/ui/components/Footer.qml:85
+#, kde-format
+msgid "Open System Settings"
+msgstr "Systemeinstellungen öffnen"
+
+#: contents/ui/components/NetworkToggle.qml:57
+#, kde-format
+msgid "Open Wi-Fi settings"
+msgstr "WLAN-Einstellungen öffnen"
+
+#: contents/ui/components/NetworkPage.qml:288
+#, kde-format
+msgid "Password"
+msgstr "Passwort"
+
+#: contents/ui/components/PowerProfilePage.qml:10
+#, kde-format
+msgid "Power Mode"
+msgstr "Energiemodus"
+
+#: contents/ui/components/BatterySaverToggle.qml:35
+#, kde-format
+msgid "Power Mode — Balanced"
+msgstr "Energiemodus — Ausgeglichen"
+
+#: contents/ui/components/BatterySaverToggle.qml:31
+#, kde-format
+msgid "Power Mode — Performance"
+msgstr "Energiemodus — Leistung"
+
+#: contents/ui/components/BatterySaverToggle.qml:33
+#, kde-format
+msgid "Power Mode — Power Saver"
+msgstr "Energiemodus — Energiesparen"
+
+#: contents/ui/components/PowerProfilePage.qml:27
+#: contents/ui/components/BatteryPage.qml:195
+#, kde-format
+msgid "Power Profiles"
+msgstr "Energieprofile"
+
+#: contents/ui/components/BatteryPage.qml:268
+#: contents/ui/components/Footer.qml:95
+#: contents/ui/components/Footer.qml:125
+#, kde-format
+msgid "Power settings"
+msgstr "Energie-Einstellungen"
+
+#: contents/ui/components/Footer.qml:71
+#, kde-format
+msgid "Power off / Log out"
+msgstr "Ausschalten / Abmelden"
+
+#: contents/ui/components/PowerProfilePage.qml:38
+#: contents/ui/components/BatteryPage.qml:206
+#, kde-format
+msgid "Performance"
+msgstr "Leistung"
+
+#: contents/ui/components/PowerProfilePage.qml:42
+#: contents/ui/components/BatteryPage.qml:210
+#, kde-format
+msgid "Power Saver"
+msgstr "Energiesparen"
+
+#: contents/ui/components/DeviceNotifierPage.qml:147
+#, kde-format
+msgid "Not mounted"
+msgstr "Nicht eingehängt"
+
+#: contents/ui/components/DeviceNotifierPage.qml:62
+#, kde-format
+msgid "Removable device"
+msgstr "Wechselmedium"
+
+#: contents/ui/components/Footer.qml:160
+#, kde-format
+msgid "Restart"
+msgstr "Neu starten"
+
+#: contents/ui/components/ColorSchemeToggle.qml:29
+#, kde-format
+msgid "Switch to dark mode"
+msgstr "Zum dunklen Modus wechseln"
+
+#: contents/ui/components/ColorSchemeToggle.qml:29
+#, kde-format
+msgid "Switch to light mode"
+msgstr "Zum hellen Modus wechseln"
+
+#: contents/ui/components/Footer.qml:150
+#, kde-format
+msgid "Suspend"
+msgstr "Ruhezustand"
+
+#: contents/ui/components/VolumeSlider.qml:64
+#, kde-format
+msgid "Test sound"
+msgstr "Ton testen"
+
+#: contents/ui/components/TouchpadToggle.qml:10
+#, kde-format
+msgid "Touchpad Off"
+msgstr "Touchpad aus"
+
+#: contents/ui/components/TouchpadToggle.qml:10
+#, kde-format
+msgid "Touchpad On"
+msgstr "Touchpad an"
+
+#: contents/ui/components/TouchpadToggle.qml:34
+#, kde-format
+msgid "Touchpad — Disabled"
+msgstr "Touchpad — Deaktiviert"
+
+#: contents/ui/components/TouchpadToggle.qml:34
+#, kde-format
+msgid "Touchpad — Enabled"
+msgstr "Touchpad — Aktiviert"
+
+#: contents/ui/components/BluetoothPage.qml:38
+#, kde-format
+msgid "Add new device"
+msgstr "Neues Gerät hinzufügen"
+
+#: contents/ui/components/BluetoothToggle.qml:44
+#, kde-format
+msgid "Add new device…"
+msgstr "Neues Gerät hinzufügen…"
+
+#: contents/ui/components/BluetoothToggle.qml:49
+#, kde-format
+msgid "Send file…"
+msgstr "Datei senden…"
+
+#: contents/ui/components/Footer.qml:100
+#, kde-format
+msgid "Show battery info"
+msgstr "Akku-Informationen anzeigen"
+
+#: contents/ui/components/Footer.qml:42
+#, kde-format
+msgid "%1 — %2h %3m remaining"
+msgstr "%1 — %2 Std. %3 Min. verbleibend"
+
+#: contents/ui/components/NotificationsPage.qml:105
+#, kde-format
+msgid "%1m ago"
+msgstr "vor %1 Min."
+
+#: contents/ui/components/NotificationsPage.qml:106
+#, kde-format
+msgid "%1h ago"
+msgstr "vor %1 Std."
+
+#: contents/ui/components/NotificationsPage.qml:107
+#, kde-format
+msgid "%1d ago"
+msgstr "vor %1 T."
+
+#: contents/ui/components/MicMuteToggle.qml:29
+#, kde-format
+msgid "Microphone — Active"
+msgstr "Mikrofon — Aktiv"
+
+#: contents/ui/components/MicMuteToggle.qml:29
+#, kde-format
+msgid "Microphone — Muted"
+msgstr "Mikrofon — Stummgeschaltet"
+
+#: contents/ui/components/NetworkPage.qml:83
+#: contents/ui/components/NetworkPage.qml:275
+#, kde-format
+msgid "Enter the network security key"
+msgstr "Netzwerksicherheitsschlüssel eingeben"
+
+#: contents/ui/components/NetworkPage.qml:343
+#, kde-format
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: contents/ui/js/funcs.js:22
+#, kde-format
+msgid "Not Connected"
+msgstr "Nicht verbunden"
+
+#: contents/ui/js/funcs.js:16
+#, kde-format
+msgid "Unavailable"
+msgstr "Nicht verfügbar"
+
+#: contents/ui/components/VolumeSlider.qml:56
+#, kde-format
+msgid "Unmute"
+msgstr "Stummschaltung aufheben"
+
+#: contents/ui/components/NetworkPage.qml:15
+#, kde-format
+msgid "Wi-Fi is off"
+msgstr "WLAN ist aus"
+
+#: contents/ui/components/NetworkToggle.qml:28
+#: contents/ui/components/NetworkPage.qml:13
+#, kde-format
+msgid "Wi-Fi"
+msgstr "WLAN"
+
+#: contents/ui/components/NetworkToggle.qml:47
+#, kde-format
+msgid "Wi-Fi — Off"
+msgstr "WLAN — Aus"
+
+#: contents/ui/components/NetworkToggle.qml:47
+#, kde-format
+msgid "Wi-Fi — On"
+msgstr "WLAN — Ein"
+
+#: contents/ui/components/ClipboardPage.qml:88
+#, kde-format
+msgid "(empty)"
+msgstr "(leer)"
+
+#: contents/ui/components/NotificationsPage.qml:18
+#, kde-format
+msgid "Notifications"
+msgstr "Benachrichtigungen"
+
+#: contents/ui/components/VolumePage.qml:12
+#, kde-format
+msgid "Volume"
+msgstr "Lautstärke"
+
+#: contents/ui/components/volume/VolumeMixerSection.qml:17
+#, kde-format
+msgid "Volume Mixer"
+msgstr "Lautstärkemixer"
+
+#: contents/ui/components/volume/OutputDeviceSection.qml:18
+#, kde-format
+msgid "Output Device"
+msgstr "Ausgabegerät"
+
+#: contents/ui/components/BrightnessPage.qml:13
+#, kde-format
+msgid "Brightness"
+msgstr "Helligkeit"
+
+#: contents/ui/components/VolumeSlider.qml:69
+#, kde-format
+msgid "Audio settings"
+msgstr "Audio-Einstellungen"
+
+#: contents/ui/components/Footer.qml:115
+#, kde-format
+msgid "Sound settings"
+msgstr "Ton-Einstellungen"
+
+#: contents/ui/components/volume/InputDeviceSection.qml:77
+#: contents/ui/components/volume/OutputDeviceSection.qml:69
+#, kde-format
+msgid "Unknown device"
+msgstr "Unbekanntes Gerät"
+
+#: contents/ui/components/volume/VolumeMixerSection.qml:52
+#, kde-format
+msgid "Unknown application"
+msgstr "Unbekannte Anwendung"
+
+#: contents/ui/components/MediaControllerPage.qml:107
+#, kde-format
+msgid "Unknown track"
+msgstr "Unbekannter Titel"
+
+#: contents/ui/components/MediaControllerPage.qml:116
+#, kde-format
+msgid "Unknown artist"
+msgstr "Unbekannter Künstler"
+
+#: contents/ui/components/NetworkPage.qml:80
+#: contents/ui/components/NetworkPage.qml:397
+#, kde-format
+msgid "Verifying and connecting"
+msgstr "Überprüfung und Verbindungsaufbau"
+
+#: contents/ui/components/NetworkToggle.qml:28
+#, kde-format
+msgid "Wi-Fi/网络"
+msgstr "WLAN/Netzwerk"
+
+#: contents/ui/ActionPanel.qml:99
+#, kde-format
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: contents/ui/ActionPanel.qml:105
+#, kde-format
+msgid "Charging — %1%"
+msgstr "Lädt — %1%"
+
+#: contents/ui/ActionPanel.qml:106
+#, kde-format
+msgid "Discharging — %1%"
+msgstr "Entlädt — %1%"

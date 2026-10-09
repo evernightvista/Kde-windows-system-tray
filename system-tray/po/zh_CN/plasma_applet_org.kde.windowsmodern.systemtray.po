@@ -1,0 +1,993 @@
+# Simplified Chinese translations for kde-windows-system-tray.
+# Copyright (C) 2026 This file is distributed under the LGPL-2.0-or-later license.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_org.kde.windowsmodern.systemtray\n"
+"Report-Msgid-Bugs-To: https://github.com/RaceConditionWinner/Kde-windows-system-tray/issues\n"
+"POT-Creation-Date: 2026-10-08 00:00+0000\n"
+"PO-Revision-Date: 2026-10-08 00:00+0800\n"
+"Last-Translator: KDE Windows Modern System Tray Team\n"
+"Language-Team: Chinese (Simplified) <kde-i18n-doc@kde.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: contents/ui/config.qml:13
+msgid "General"
+msgstr "常规"
+
+#: contents/ui/BackgroundAppItem.qml:76
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Quit %1"
+msgstr "退出 %1"
+
+#: contents/ui/ExpandedRepresentation.qml:110
+#, kde-format
+msgctxt "@action:button"
+msgid "Go Back"
+msgstr "返回"
+
+#: contents/ui/ExpandedRepresentation.qml:123
+#, kde-format
+msgid "Status and Notifications"
+msgstr "状态和通知"
+
+#: contents/ui/ExpandedRepresentation.qml:176
+#, kde-format
+msgid "More actions"
+msgstr "更多操作"
+
+#: contents/ui/ExpandedRepresentation.qml:224
+#, kde-format
+msgid "Keep Open"
+msgstr "保持打开"
+
+#: contents/ui/ConfigGeneral.qml:58
+#, kde-format
+msgctxt "@item:inlistbox Show this System Tray item when relevant"
+msgid "Show when relevant"
+msgstr "相关时显示"
+
+#: contents/ui/ConfigGeneral.qml:62
+#, kde-format
+msgctxt "@item:inlistbox Always show this System Tray item"
+msgid "Always show"
+msgstr "始终显示"
+
+#: contents/ui/ConfigGeneral.qml:66
+#, kde-format
+msgctxt "@item:inlistbox Show this System Tray item only in the expanded popup"
+msgid "Show only in popup"
+msgstr "仅在弹出窗口中显示"
+
+#: contents/ui/ConfigGeneral.qml:70
+#, kde-format
+msgctxt "@item:inlistbox Never show this System Tray item; disable it"
+msgid "Never show (disabled)"
+msgstr "从不显示（已禁用）"
+
+#: contents/ui/ConfigGeneral.qml:141
+#, kde-format
+msgid "Application Status"
+msgstr "应用程序状态"
+
+#: contents/ui/ConfigGeneral.qml:143
+#, kde-format
+msgid "Communications"
+msgstr "通讯"
+
+#: contents/ui/ConfigGeneral.qml:145
+#, kde-format
+msgid "System Services"
+msgstr "系统服务"
+
+#: contents/ui/ConfigGeneral.qml:147
+#, kde-format
+msgid "Hardware Control"
+msgstr "硬件控制"
+
+#: contents/ui/ConfigGeneral.qml:150
+#, kde-format
+msgid "Miscellaneous"
+msgstr "其他"
+
+#: contents/ui/ConfigGeneral.qml:187
+#, kde-format
+msgctxt "@info:usagetip"
+msgid ""
+"Look for a setting in <application>%1</application> to disable its tray icon "
+"before doing it here. Some apps’ tray icons were not designed to be "
+"disabled, and using this setting may cause them to behave unexpectedly."
+"<nl/><nl/>Use this setting at your own risk, and do not report issues to "
+"KDE or the app’s author."
+msgstr ""
+"请先在 <application>%1</application> 中查找禁用其托盘图标的设置，然后再在此处"
+"操作。某些应用程序的托盘图标并未设计为可禁用，使用此设置可能导致其行为异常。"
+"<nl/><nl/>使用此设置的风险由您自行承担，请不要向 KDE 或应用程序作者报告相关问"
+"题。"
+
+#: contents/ui/ConfigGeneral.qml:190
+#, kde-format
+msgctxt "@action:button"
+msgid "I understand the risks"
+msgstr "我了解风险"
+
+#: contents/ui/ConfigGeneral.qml:202
+#, kde-format
+msgctxt "@info:usagetip"
+msgid ""
+"Disabling the clipboard is not recommended, as it will cause copied data to "
+"be lost when the application it was copied from is closed.<nl/><nl/>Only do "
+"this if you’ve manually added a standalone Clipboard widget somewhere else, "
+"or are using a 3rd-party clipboard manager. Also, instead consider "
+"configuring the clipboard to not save history, or to only remember one "
+"item at a time."
+msgstr ""
+"不建议禁用剪贴板，因为这会导致复制的数据在源应用程序关闭时丢失。<nl/><nl/>仅"
+"当您已在其他位置手动添加了独立的剪贴板小组件，或正在使用第三方剪贴板管理器时"
+"才这样做。另外，也可以考虑将剪贴板配置为不保存历史记录，或每次只记住一个项。"
+
+#: contents/ui/ConfigGeneral.qml:211
+#, kde-format
+msgctxt "@info:usagetip"
+msgid ""
+"Disabling the Notifications widget is not recommended, as notifications sent "
+"by apps will no longer be shown.<nl/><nl/>Only do this if you’ve manually "
+"added a standalone Notifications widget somewhere else, or are intentionally "
+"using a 3rd-party notification manager to handle notifications."
+msgstr ""
+"不建议禁用通知小组件，因为应用程序发送的通知将不再显示。<nl/><nl/>仅当您已在"
+"其他位置手动添加了独立的通知小组件，或有意使用第三方通知管理器来处理通知时才"
+"这样做。"
+
+#: contents/ui/ConfigGeneral.qml:223
+#, kde-format
+msgctxt "@item:inlistbox Icon size"
+msgid "Scale with Panel height"
+msgstr "随面板高度缩放"
+
+#: contents/ui/ConfigGeneral.qml:224
+#, kde-format
+msgctxt "@item:inlistbox Icon size"
+msgid "Scale with Panel width"
+msgstr "随面板宽度缩放"
+
+#: contents/ui/ConfigGeneral.qml:226
+#, kde-format
+msgctxt ""
+"@label:listbox Whether the system tray icons in the Panel always stay small "
+"or scale with the Panel's size"
+msgid "Panel icon size:"
+msgstr "面板图标大小："
+
+#: contents/ui/ConfigGeneral.qml:230
+#, kde-format
+msgctxt "@item:inlistbox Icon size"
+msgid "Small"
+msgstr "小"
+
+#: contents/ui/ConfigGeneral.qml:250
+#, kde-format
+msgctxt "@label:listbox The spacing between system tray icons in the Panel"
+msgid "Spacing:"
+msgstr "间距："
+
+#: contents/ui/ConfigGeneral.qml:254
+#, kde-format
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Small"
+msgstr "小"
+
+#: contents/ui/ConfigGeneral.qml:258
+#, kde-format
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Normal"
+msgstr "正常"
+
+#: contents/ui/ConfigGeneral.qml:262
+#, kde-format
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Large"
+msgstr "大"
+
+#: contents/ui/ConfigGeneral.qml:282
+#, kde-format
+msgctxt ""
+"@label:listbox Which direction system tray icons in the Panel emerge from "
+"the expander arrow"
+msgid "Direction:"
+msgstr "方向："
+
+#: contents/ui/ConfigGeneral.qml:296
+#, kde-format
+msgid "Bottom-to-top"
+msgstr "从下到上"
+
+#: contents/ui/ConfigGeneral.qml:297
+#, kde-format
+msgid "Top-to-bottom"
+msgstr "从上到下"
+
+#: contents/ui/ConfigGeneral.qml:302
+#: contents/ui/ConfigGeneral.qml:309
+#, kde-format
+msgid "Left-to-right"
+msgstr "从左到右"
+
+#: contents/ui/ConfigGeneral.qml:303
+#: contents/ui/ConfigGeneral.qml:308
+#, kde-format
+msgid "Right-to-left"
+msgstr "从右到左"
+
+#: contents/ui/ConfigGeneral.qml:320
+#, kde-format
+msgctxt "@info:tooltip under a combobox when Touch Mode is on"
+msgid "Automatically set to Large when in Touch Mode"
+msgstr "在触摸模式下自动设置为大"
+
+#: contents/ui/ConfigGeneral.qml:345
+#, kde-format
+msgctxt "@title:column"
+msgid "Entries"
+msgstr "条目"
+
+#: contents/ui/ConfigGeneral.qml:349
+#, kde-format
+msgctxt "@option:check, This is referring to system tray entries"
+msgid "Always show all"
+msgstr "始终显示全部"
+
+#: contents/ui/ConfigGeneral.qml:501
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Always shown next to the expander as part of the system cluster"
+msgstr "始终作为系统集群的一部分显示在展开箭头旁边"
+
+#: contents/ui/ExpanderArrow.qml:25
+#, kde-format
+msgid "Show all the items in the system tray in a popup"
+msgstr "在弹出窗口中显示系统托盘中的所有项"
+
+#: contents/ui/ExpanderArrow.qml:55
+#, kde-format
+msgid "Close popup"
+msgstr "关闭弹出窗口"
+
+#: contents/ui/ExpanderArrow.qml:55
+#, kde-format
+msgid "Show hidden icons"
+msgstr "显示隐藏的图标"
+
+
+#: contents/ui/components/AirplaneToggle.qml:12
+#, kde-format
+msgid "Airplane"
+msgstr "飞行模式"
+
+#: contents/ui/components/AirplaneToggle.qml:22
+#, kde-format
+msgid "Airplane Mode — On"
+msgstr "飞行模式 — 开启"
+
+#: contents/ui/components/AirplaneToggle.qml:22
+#, kde-format
+msgid "Airplane Mode — Off"
+msgstr "飞行模式 — 关闭"
+
+#: contents/ui/components/BatteryPage.qml:14
+#, kde-format
+msgid "Battery"
+msgstr "电池"
+
+#: contents/ui/components/BatterySaverToggle.qml:16
+#, kde-format
+msgid "Battery Saver"
+msgstr "节电模式"
+
+#: contents/ui/components/BatteryPage.qml:157
+#, kde-format
+msgid "Battery health"
+msgstr "电池健康"
+
+#: contents/ui/components/BatteryPage.qml:251
+#, kde-format
+msgid "Block sleep & screen lock"
+msgstr "阻止睡眠和屏幕锁定"
+
+#: contents/ui/components/PowerProfilePage.qml:40
+#: contents/ui/components/BatteryPage.qml:208
+#, kde-format
+msgid "Balanced"
+msgstr "平衡"
+
+#: contents/ui/components/BluetoothToggle.qml:13
+#: contents/ui/components/BluetoothPage.qml:13
+#, kde-format
+msgid "Bluetooth"
+msgstr "蓝牙"
+
+#: contents/ui/components/BluetoothToggle.qml:33
+#, kde-format
+msgid "Bluetooth — On, not connected"
+msgstr "蓝牙 — 开启，未连接"
+
+#: contents/ui/components/BluetoothToggle.qml:30
+#, kde-format
+msgid "Bluetooth — Off"
+msgstr "蓝牙 — 关闭"
+
+#: contents/ui/components/BluetoothToggle.qml:32
+#, kde-format
+msgid "Bluetooth — %1 connected"
+msgstr "蓝牙 — 已连接 %1 个设备"
+
+#: contents/ui/components/BluetoothPage.qml:15
+#, kde-format
+msgid "Bluetooth is off"
+msgstr "蓝牙已关闭"
+
+#: contents/ui/components/BluetoothToggle.qml:54
+#, kde-format
+msgid "Bluetooth settings"
+msgstr "蓝牙设置"
+
+#: contents/ui/components/Footer.qml:37
+#, kde-format
+msgid "Charging — %1"
+msgstr "正在充电 — %1"
+
+#: contents/ui/components/BatteryPage.qml:109
+#, kde-format
+msgid "Charging"
+msgstr "正在充电"
+
+#: contents/ui/components/ClipboardPage.qml:18
+#, kde-format
+msgid "Clipboard"
+msgstr "剪贴板"
+
+#: contents/ui/components/ClipboardPage.qml:109
+#, kde-format
+msgid "Clipboard is empty"
+msgstr "剪贴板为空"
+
+#: contents/ui/components/NetworkPage.qml:252
+#, kde-format
+msgid "Connect"
+msgstr "连接"
+
+#: contents/ui/components/NetworkToggle.qml:67
+#, kde-format
+msgid "Connect to hidden network…"
+msgstr "连接到隐藏网络…"
+
+#: contents/ui/components/NetworkPage.qml:77
+#, kde-format
+msgid "Connected, open"
+msgstr "已连接，开放"
+
+#: contents/ui/components/NetworkPage.qml:77
+#, kde-format
+msgid "Connected, secured"
+msgstr "已连接，安全"
+
+#: contents/ui/components/BluetoothPage.qml:109
+#, kde-format
+msgid "Connected"
+msgstr "已连接"
+
+#: contents/ui/components/NetworkToggle.qml:62
+#, kde-format
+msgid "Create hotspot…"
+msgstr "创建热点…"
+
+#: contents/ui/components/ColorSchemeToggle.qml:13
+#, kde-format
+msgid "Dark Mode"
+msgstr "深色模式"
+
+#: contents/ui/components/DeviceNotifierPage.qml:19
+#, kde-format
+msgid "Devices"
+msgstr "设备"
+
+#: contents/ui/components/NetworkPage.qml:432
+#, kde-format
+msgid "Disconnect"
+msgstr "断开"
+
+#: contents/ui/components/BluetoothPage.qml:109
+#, kde-format
+msgid "Disconnected"
+msgstr "已断开"
+
+#: contents/ui/components/BatteryPage.qml:109
+#, kde-format
+msgid "Discharging"
+msgstr "正在放电"
+
+#: contents/ui/components/BrightnessPage.qml:80
+#, kde-format
+msgid "Display %1"
+msgstr "显示器 %1"
+
+#: contents/ui/components/Footer.qml:110
+#: contents/ui/components/BrightnessPage.qml:134
+#, kde-format
+msgid "Display settings"
+msgstr "显示设置"
+
+#: contents/ui/components/DndToggle.qml:13
+#, kde-format
+msgid "Do Not Disturb"
+msgstr "勿扰"
+
+#: contents/ui/components/DndToggle.qml:30
+#, kde-format
+msgid "Do Not Disturb — Off"
+msgstr "勿扰 — 关闭"
+
+#: contents/ui/components/DndToggle.qml:30
+#, kde-format
+msgid "Do Not Disturb — On"
+msgstr "勿扰 — 开启"
+
+#: contents/ui/js/funcs.js:13
+#, kde-format
+msgid "Disabled"
+msgstr "已禁用"
+
+#: contents/ui/components/Footer.qml:165
+#, kde-format
+msgid "Shut down"
+msgstr "关机"
+
+#: contents/ui/components/BatteryPage.qml:109
+#, kde-format
+msgid "Fully charged"
+msgstr "已充满"
+
+#: contents/ui/components/HotspotToggle.qml:15
+#, kde-format
+msgid "Hotspot"
+msgstr "热点"
+
+#: contents/ui/components/HotspotToggle.qml:30
+#, kde-format
+msgid "Hotspot — Off"
+msgstr "热点 — 关闭"
+
+#: contents/ui/components/HotspotToggle.qml:30
+#, kde-format
+msgid "Hotspot — On"
+msgstr "热点 — 开启"
+
+#: contents/ui/components/Footer.qml:155
+#, kde-format
+msgid "Hibernate"
+msgstr "休眠"
+
+#: contents/ui/components/volume/InputDeviceSection.qml:19
+#, kde-format
+msgid "Input Device"
+msgstr "输入设备"
+
+#: contents/ui/components/CastInvertToggle.qml:8
+#, kde-format
+msgid "Invert Colors"
+msgstr "反转颜色"
+
+#: contents/ui/components/CastInvertToggle.qml:22
+#, kde-format
+msgid "Invert Colors — Toggle"
+msgstr "反转颜色 — 切换"
+
+#: contents/ui/components/NotificationsPage.qml:104
+#, kde-format
+msgid "Just now"
+msgstr "刚刚"
+
+#: contents/ui/components/NetworkToggle.qml:72
+#, kde-format
+msgid "Known networks…"
+msgstr "已知网络…"
+
+#: contents/ui/components/ColorSchemeToggle.qml:13
+#, kde-format
+msgid "Light Mode"
+msgstr "浅色模式"
+
+#: contents/ui/components/Footer.qml:140
+#, kde-format
+msgid "Lock"
+msgstr "锁定"
+
+#: contents/ui/components/Footer.qml:145
+#, kde-format
+msgid "Log out"
+msgstr "注销"
+
+#: contents/ui/components/VolumeSlider.qml:56
+#, kde-format
+msgid "Mute"
+msgstr "静音"
+
+#: contents/ui/components/MicMuteToggle.qml:19
+#, kde-format
+msgid "Mic Muted"
+msgstr "麦克风已静音"
+
+#: contents/ui/components/MicMuteToggle.qml:19
+#, kde-format
+msgid "Mic On"
+msgstr "麦克风开"
+
+#: contents/ui/components/MediaControllerPage.qml:18
+#, kde-format
+msgid "Media"
+msgstr "媒体"
+
+#: contents/ui/components/MediaControllerPage.qml:22
+#, kde-format
+msgid "More media settings"
+msgstr "更多媒体设置"
+
+#: contents/ui/components/BluetoothPage.qml:18
+#, kde-format
+msgid "More Bluetooth settings"
+msgstr "更多蓝牙设置"
+
+#: contents/ui/components/ClipboardPage.qml:22
+#, kde-format
+msgid "More clipboard settings"
+msgstr "更多剪贴板设置"
+
+#: contents/ui/components/DeviceNotifierPage.qml:23
+#, kde-format
+msgid "More device settings"
+msgstr "更多设备设置"
+
+#: contents/ui/components/NotificationsPage.qml:22
+#, kde-format
+msgid "More notification settings"
+msgstr "更多通知设置"
+
+#: contents/ui/components/PowerProfilePage.qml:18
+#, kde-format
+msgid "More power settings"
+msgstr "更多电源设置"
+
+#: contents/ui/components/VolumePage.qml:16
+#, kde-format
+msgid "More volume settings"
+msgstr "更多音量设置"
+
+#: contents/ui/components/NetworkPage.qml:18
+#, kde-format
+msgid "More Wi-Fi settings"
+msgstr "更多 Wi-Fi 设置"
+
+#: contents/ui/components/DeviceNotifierPage.qml:147
+#, kde-format
+msgid "Mounted"
+msgstr "已挂载"
+
+#: contents/ui/components/Footer.qml:130
+#, kde-format
+msgid "Notification settings"
+msgstr "通知设置"
+
+#: contents/ui/components/NotificationsPage.qml:80
+#, kde-format
+msgid "Notification"
+msgstr "通知"
+
+#: contents/ui/components/NotificationsPage.qml:123
+#, kde-format
+msgid "No notifications"
+msgstr "无通知"
+
+#: contents/ui/components/VolumePage.qml:64
+#, kde-format
+msgid "No applications playing audio"
+msgstr "没有应用程序正在播放音频"
+
+#: contents/ui/components/BluetoothPage.qml:15
+#, kde-format
+msgid "No devices paired"
+msgstr "没有已配对的设备"
+
+#: contents/ui/components/DeviceNotifierPage.qml:190
+#, kde-format
+msgid "No devices connected"
+msgstr "没有已连接的设备"
+
+#: contents/ui/components/volume/InputDeviceSection.qml:26
+#, kde-format
+msgid "No input device"
+msgstr "无输入设备"
+
+#: contents/ui/components/MediaControllerPage.qml:233
+#, kde-format
+msgid "No media playing"
+msgstr "没有媒体正在播放"
+
+#: contents/ui/components/NetworkPage.qml:15
+#, kde-format
+msgid "No available networks"
+msgstr "没有可用网络"
+
+#: contents/ui/components/volume/OutputDeviceSection.qml:28
+#, kde-format
+msgid "No output device"
+msgstr "无输出设备"
+
+#: contents/ui/components/InhibitSleepToggle.qml:8
+#, kde-format
+msgid "No Sleep"
+msgstr "禁止睡眠"
+
+#: contents/ui/components/Footer.qml:120
+#, kde-format
+msgid "Network settings"
+msgstr "网络设置"
+
+#: contents/ui/components/NetworkPage.qml:373
+#, kde-format
+msgid "Next"
+msgstr "下一步"
+
+#: contents/ui/components/NightLightToggle.qml:9
+#, kde-format
+msgid "Night Light"
+msgstr "夜间光线"
+
+#: contents/ui/components/NightLightToggle.qml:26
+#, kde-format
+msgid "Night Light — Off"
+msgstr "夜间光线 — 关闭"
+
+#: contents/ui/components/NightLightToggle.qml:25
+#, kde-format
+msgid "Night Light — On"
+msgstr "夜间光线 — 开启"
+
+#: contents/ui/components/NightLightToggle.qml:23
+#, kde-format
+msgid "Night Light — Unavailable"
+msgstr "夜间光线 — 不可用"
+
+#: contents/ui/components/BrightnessPage.qml:130
+#, kde-format
+msgid "Night color settings"
+msgstr "夜间颜色设置"
+
+#: contents/ui/components/InhibitSleepToggle.qml:8
+#, kde-format
+msgid "Sleep Blocked"
+msgstr "睡眠已阻止"
+
+#: contents/ui/components/InhibitSleepToggle.qml:58
+#, kde-format
+msgid "Sleep Allowed"
+msgstr "允许睡眠"
+
+#: contents/ui/components/InhibitSleepToggle.qml:58
+#, kde-format
+msgid "Sleep Inhibited"
+msgstr "睡眠已抑制"
+
+#: contents/ui/components/js/funcs.js:18
+#, kde-format
+msgid "Offline"
+msgstr "离线"
+
+#: contents/ui/components/Footer.qml:85
+#, kde-format
+msgid "Open System Settings"
+msgstr "打开系统设置"
+
+#: contents/ui/components/NetworkToggle.qml:57
+#, kde-format
+msgid "Open Wi-Fi settings"
+msgstr "打开 Wi-Fi 设置"
+
+#: contents/ui/components/NetworkPage.qml:288
+#, kde-format
+msgid "Password"
+msgstr "密码"
+
+#: contents/ui/components/PowerProfilePage.qml:10
+#, kde-format
+msgid "Power Mode"
+msgstr "电源模式"
+
+#: contents/ui/components/BatterySaverToggle.qml:35
+#, kde-format
+msgid "Power Mode — Balanced"
+msgstr "电源模式 — 平衡"
+
+#: contents/ui/components/BatterySaverToggle.qml:31
+#, kde-format
+msgid "Power Mode — Performance"
+msgstr "电源模式 — 性能"
+
+#: contents/ui/components/BatterySaverToggle.qml:33
+#, kde-format
+msgid "Power Mode — Power Saver"
+msgstr "电源模式 — 节能"
+
+#: contents/ui/components/PowerProfilePage.qml:27
+#: contents/ui/components/BatteryPage.qml:195
+#, kde-format
+msgid "Power Profiles"
+msgstr "电源配置文件"
+
+#: contents/ui/components/BatteryPage.qml:268
+#: contents/ui/components/Footer.qml:95
+#: contents/ui/components/Footer.qml:125
+#, kde-format
+msgid "Power settings"
+msgstr "电源设置"
+
+#: contents/ui/components/Footer.qml:71
+#, kde-format
+msgid "Power off / Log out"
+msgstr "关机 / 注销"
+
+#: contents/ui/components/PowerProfilePage.qml:38
+#: contents/ui/components/BatteryPage.qml:206
+#, kde-format
+msgid "Performance"
+msgstr "性能"
+
+#: contents/ui/components/PowerProfilePage.qml:42
+#: contents/ui/components/BatteryPage.qml:210
+#, kde-format
+msgid "Power Saver"
+msgstr "节能"
+
+#: contents/ui/components/DeviceNotifierPage.qml:147
+#, kde-format
+msgid "Not mounted"
+msgstr "未挂载"
+
+#: contents/ui/components/DeviceNotifierPage.qml:62
+#, kde-format
+msgid "Removable device"
+msgstr "可移动设备"
+
+#: contents/ui/components/Footer.qml:160
+#, kde-format
+msgid "Restart"
+msgstr "重启"
+
+#: contents/ui/components/ColorSchemeToggle.qml:29
+#, kde-format
+msgid "Switch to dark mode"
+msgstr "切换到深色模式"
+
+#: contents/ui/components/ColorSchemeToggle.qml:29
+#, kde-format
+msgid "Switch to light mode"
+msgstr "切换到浅色模式"
+
+#: contents/ui/components/Footer.qml:150
+#, kde-format
+msgid "Suspend"
+msgstr "挂起"
+
+#: contents/ui/components/VolumeSlider.qml:64
+#, kde-format
+msgid "Test sound"
+msgstr "测试声音"
+
+#: contents/ui/components/TouchpadToggle.qml:10
+#, kde-format
+msgid "Touchpad Off"
+msgstr "触摸板关闭"
+
+#: contents/ui/components/TouchpadToggle.qml:10
+#, kde-format
+msgid "Touchpad On"
+msgstr "触摸板开启"
+
+#: contents/ui/components/TouchpadToggle.qml:34
+#, kde-format
+msgid "Touchpad — Disabled"
+msgstr "触摸板 — 已禁用"
+
+#: contents/ui/components/TouchpadToggle.qml:34
+#, kde-format
+msgid "Touchpad — Enabled"
+msgstr "触摸板 — 已启用"
+
+#: contents/ui/components/BluetoothPage.qml:38
+#, kde-format
+msgid "Add new device"
+msgstr "添加新设备"
+
+#: contents/ui/components/BluetoothToggle.qml:44
+#, kde-format
+msgid "Add new device…"
+msgstr "添加新设备…"
+
+#: contents/ui/components/BluetoothToggle.qml:49
+#, kde-format
+msgid "Send file…"
+msgstr "发送文件…"
+
+#: contents/ui/components/Footer.qml:100
+#, kde-format
+msgid "Show battery info"
+msgstr "显示电池信息"
+
+#: contents/ui/components/Footer.qml:42
+#, kde-format
+msgid "%1 — %2h %3m remaining"
+msgstr "%1 — 剩余 %2 小时 %3 分钟"
+
+#: contents/ui/components/NotificationsPage.qml:105
+#, kde-format
+msgid "%1m ago"
+msgstr "%1 分钟前"
+
+#: contents/ui/components/NotificationsPage.qml:106
+#, kde-format
+msgid "%1h ago"
+msgstr "%1 小时前"
+
+#: contents/ui/components/NotificationsPage.qml:107
+#, kde-format
+msgid "%1d ago"
+msgstr "%1 天前"
+
+#: contents/ui/components/MicMuteToggle.qml:29
+#, kde-format
+msgid "Microphone — Active"
+msgstr "麦克风 — 活动中"
+
+#: contents/ui/components/MicMuteToggle.qml:29
+#, kde-format
+msgid "Microphone — Muted"
+msgstr "麦克风 — 已静音"
+
+#: contents/ui/components/NetworkPage.qml:83
+#: contents/ui/components/NetworkPage.qml:275
+#, kde-format
+msgid "Enter the network security key"
+msgstr "输入网络安全密钥"
+
+#: contents/ui/components/NetworkPage.qml:343
+#, kde-format
+msgid "Cancel"
+msgstr "取消"
+
+#: contents/ui/js/funcs.js:22
+#, kde-format
+msgid "Not Connected"
+msgstr "未连接"
+
+#: contents/ui/js/funcs.js:16
+#, kde-format
+msgid "Unavailable"
+msgstr "不可用"
+
+#: contents/ui/components/VolumeSlider.qml:56
+#, kde-format
+msgid "Unmute"
+msgstr "取消静音"
+
+#: contents/ui/components/NetworkPage.qml:15
+#, kde-format
+msgid "Wi-Fi is off"
+msgstr "Wi-Fi 已关闭"
+
+#: contents/ui/components/NetworkToggle.qml:28
+#: contents/ui/components/NetworkPage.qml:13
+#, kde-format
+msgid "Wi-Fi"
+msgstr "Wi-Fi"
+
+#: contents/ui/components/NetworkToggle.qml:47
+#, kde-format
+msgid "Wi-Fi — Off"
+msgstr "Wi-Fi — 关闭"
+
+#: contents/ui/components/NetworkToggle.qml:47
+#, kde-format
+msgid "Wi-Fi — On"
+msgstr "Wi-Fi — 开启"
+
+#: contents/ui/components/ClipboardPage.qml:88
+#, kde-format
+msgid "(empty)"
+msgstr "（空）"
+
+#: contents/ui/components/NotificationsPage.qml:18
+#, kde-format
+msgid "Notifications"
+msgstr "通知"
+
+#: contents/ui/components/VolumePage.qml:12
+#, kde-format
+msgid "Volume"
+msgstr "音量"
+
+#: contents/ui/components/volume/VolumeMixerSection.qml:17
+#, kde-format
+msgid "Volume Mixer"
+msgstr "音量合成器"
+
+#: contents/ui/components/volume/OutputDeviceSection.qml:18
+#, kde-format
+msgid "Output Device"
+msgstr "输出设备"
+
+#: contents/ui/components/BrightnessPage.qml:13
+#, kde-format
+msgid "Brightness"
+msgstr "亮度"
+
+#: contents/ui/components/VolumeSlider.qml:69
+#, kde-format
+msgid "Audio settings"
+msgstr "音频设置"
+
+#: contents/ui/components/Footer.qml:115
+#, kde-format
+msgid "Sound settings"
+msgstr "声音设置"
+
+#: contents/ui/components/volume/InputDeviceSection.qml:77
+#: contents/ui/components/volume/OutputDeviceSection.qml:69
+#, kde-format
+msgid "Unknown device"
+msgstr "未知设备"
+
+#: contents/ui/components/volume/VolumeMixerSection.qml:52
+#, kde-format
+msgid "Unknown application"
+msgstr "未知应用程序"
+
+#: contents/ui/components/MediaControllerPage.qml:107
+#, kde-format
+msgid "Unknown track"
+msgstr "未知曲目"
+
+#: contents/ui/components/MediaControllerPage.qml:116
+#, kde-format
+msgid "Unknown artist"
+msgstr "未知艺术家"
+
+#: contents/ui/components/NetworkPage.qml:80
+#: contents/ui/components/NetworkPage.qml:397
+#, kde-format
+msgid "Verifying and connecting"
+msgstr "正在验证并连接"
+
+
+#: contents/ui/components/NetworkToggle.qml:28
+#, kde-format
+msgid "Wi-Fi/网络"
+msgstr "Wi-Fi/网络"
+
+#: contents/ui/ActionPanel.qml:99
+#, kde-format
+msgid "Settings"
+msgstr "设置"
+
+#: contents/ui/ActionPanel.qml:105
+#, kde-format
+msgid "Charging — %1%"
+msgstr "正在充电 — %1%"
+
+#: contents/ui/ActionPanel.qml:106
+#, kde-format
+msgid "Discharging — %1%"
+msgstr "正在耗电 — %1%"

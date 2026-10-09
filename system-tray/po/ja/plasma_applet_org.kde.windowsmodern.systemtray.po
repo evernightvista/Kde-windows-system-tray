@@ -1,0 +1,985 @@
+# Japanese translations for kde-windows-system-tray.
+# Copyright (C) 2026 This file is distributed under the LGPL-2.0-or-later license.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_org.kde.windowsmodern.systemtray\n"
+"Report-Msgid-Bugs-To: https://github.com/RaceConditionWinner/Kde-windows-system-tray/issues\n"
+"POT-Creation-Date: 2026-10-08 00:00+0000\n"
+"PO-Revision-Date: 2026-10-08 00:00+0900\n"
+"Last-Translator: KDE Windows Modern System Tray Team\n"
+"Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: contents/ui/config.qml:13
+msgid "General"
+msgstr "全般"
+
+#: contents/ui/BackgroundAppItem.qml:76
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Quit %1"
+msgstr "%1を終了"
+
+#: contents/ui/ExpandedRepresentation.qml:110
+#, kde-format
+msgctxt "@action:button"
+msgid "Go Back"
+msgstr "戻る"
+
+#: contents/ui/ExpandedRepresentation.qml:123
+#, kde-format
+msgid "Status and Notifications"
+msgstr "ステータスと通知"
+
+#: contents/ui/ExpandedRepresentation.qml:176
+#, kde-format
+msgid "More actions"
+msgstr "その他のアクション"
+
+#: contents/ui/ExpandedRepresentation.qml:224
+#, kde-format
+msgid "Keep Open"
+msgstr "開いたままにする"
+
+#: contents/ui/ConfigGeneral.qml:58
+#, kde-format
+msgctxt "@item:inlistbox Show this System Tray item when relevant"
+msgid "Show when relevant"
+msgstr "関連する時に表示"
+
+#: contents/ui/ConfigGeneral.qml:62
+#, kde-format
+msgctxt "@item:inlistbox Always show this System Tray item"
+msgid "Always show"
+msgstr "常に表示"
+
+#: contents/ui/ConfigGeneral.qml:66
+#, kde-format
+msgctxt "@item:inlistbox Show this System Tray item only in the expanded popup"
+msgid "Show only in popup"
+msgstr "ポップアップでのみ表示"
+
+#: contents/ui/ConfigGeneral.qml:70
+#, kde-format
+msgctxt "@item:inlistbox Never show this System Tray item; disable it"
+msgid "Never show (disabled)"
+msgstr "表示しない（無効）"
+
+#: contents/ui/ConfigGeneral.qml:141
+#, kde-format
+msgid "Application Status"
+msgstr "アプリケーションの状態"
+
+#: contents/ui/ConfigGeneral.qml:143
+#, kde-format
+msgid "Communications"
+msgstr "コミュニケーション"
+
+#: contents/ui/ConfigGeneral.qml:145
+#, kde-format
+msgid "System Services"
+msgstr "システムサービス"
+
+#: contents/ui/ConfigGeneral.qml:147
+#, kde-format
+msgid "Hardware Control"
+msgstr "ハードウェア制御"
+
+#: contents/ui/ConfigGeneral.qml:150
+#, kde-format
+msgid "Miscellaneous"
+msgstr "その他"
+
+#: contents/ui/ConfigGeneral.qml:187
+#, kde-format
+msgctxt "@info:usagetip"
+msgid ""
+"Look for a setting in <application>%1</application> to disable its tray icon "
+"before doing it here. Some apps’ tray icons were not designed to be "
+"disabled, and using this setting may cause them to behave unexpectedly."
+"<nl/><nl/>Use this setting at your own risk, and do not report issues to "
+"KDE or the app’s author."
+msgstr ""
+"ここで無効にする前に、<application>%1</application>の設定でトレイアイコンを無効にできるか確認してください。一部のアプリのトレイアイコンは無効にすることを想定して作られておらず、この設定を使用すると予期しない動作を引き起こす可能性があります。<nl/><nl/>この設定は自己責任で使用し、KDEやアプリの作者に問題を報告しないでください。"
+
+#: contents/ui/ConfigGeneral.qml:190
+#, kde-format
+msgctxt "@action:button"
+msgid "I understand the risks"
+msgstr "リスクを理解しました"
+
+#: contents/ui/ConfigGeneral.qml:202
+#, kde-format
+msgctxt "@info:usagetip"
+msgid ""
+"Disabling the clipboard is not recommended, as it will cause copied data to "
+"be lost when the application it was copied from is closed.<nl/><nl/>Only do "
+"this if you’ve manually added a standalone Clipboard widget somewhere else, "
+"or are using a 3rd-party clipboard manager. Also, instead consider "
+"configuring the clipboard to not save history, or to only remember one "
+"item at a time."
+msgstr ""
+"クリップボードを無効にすることは推奨されません。データをコピーしたアプリを閉じた時にコピーしたデータが失われる原因になります。<nl/><nl/>他の場所に単独のクリップボードウィジェットを手動で追加した場合、またはサードパーティのクリップボードマネージャを使用している場合のみ実行してください。また、履歴を保存しない、または一度に一つの項目のみを記憶するようにクリップボードを設定することも検討してください。"
+
+#: contents/ui/ConfigGeneral.qml:211
+#, kde-format
+msgctxt "@info:usagetip"
+msgid ""
+"Disabling the Notifications widget is not recommended, as notifications sent "
+"by apps will no longer be shown.<nl/><nl/>Only do this if you’ve manually "
+"added a standalone Notifications widget somewhere else, or are intentionally "
+"using a 3rd-party notification manager to handle notifications."
+msgstr ""
+"通知ウィジェットを無効にすることは推奨されません。アプリから送信される通知が表示されなくなるためです。<nl/><nl/>他の場所に単独の通知ウィジェットを手動で追加した場合、または通知を処理するためにサードパーティの通知マネージャを意図的に使用している場合のみ実行してください。"
+
+#: contents/ui/ConfigGeneral.qml:223
+#, kde-format
+msgctxt "@item:inlistbox Icon size"
+msgid "Scale with Panel height"
+msgstr "パネルの高さに合わせてスケール"
+
+#: contents/ui/ConfigGeneral.qml:224
+#, kde-format
+msgctxt "@item:inlistbox Icon size"
+msgid "Scale with Panel width"
+msgstr "パネルの幅に合わせてスケール"
+
+#: contents/ui/ConfigGeneral.qml:226
+#, kde-format
+msgctxt ""
+"@label:listbox Whether the system tray icons in the Panel always stay small "
+"or scale with the Panel's size"
+msgid "Panel icon size:"
+msgstr "パネルアイコンサイズ："
+
+#: contents/ui/ConfigGeneral.qml:230
+#, kde-format
+msgctxt "@item:inlistbox Icon size"
+msgid "Small"
+msgstr "小"
+
+#: contents/ui/ConfigGeneral.qml:250
+#, kde-format
+msgctxt "@label:listbox The spacing between system tray icons in the Panel"
+msgid "Spacing:"
+msgstr "間隔："
+
+#: contents/ui/ConfigGeneral.qml:254
+#, kde-format
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Small"
+msgstr "小"
+
+#: contents/ui/ConfigGeneral.qml:258
+#, kde-format
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Normal"
+msgstr "標準"
+
+#: contents/ui/ConfigGeneral.qml:262
+#, kde-format
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Large"
+msgstr "大"
+
+#: contents/ui/ConfigGeneral.qml:282
+#, kde-format
+msgctxt ""
+"@label:listbox Which direction system tray icons in the Panel emerge from "
+"the expander arrow"
+msgid "Direction:"
+msgstr "方向："
+
+#: contents/ui/ConfigGeneral.qml:296
+#, kde-format
+msgid "Bottom-to-top"
+msgstr "下から上へ"
+
+#: contents/ui/ConfigGeneral.qml:297
+#, kde-format
+msgid "Top-to-bottom"
+msgstr "上から下へ"
+
+#: contents/ui/ConfigGeneral.qml:302
+#: contents/ui/ConfigGeneral.qml:309
+#, kde-format
+msgid "Left-to-right"
+msgstr "左から右へ"
+
+#: contents/ui/ConfigGeneral.qml:303
+#: contents/ui/ConfigGeneral.qml:308
+#, kde-format
+msgid "Right-to-left"
+msgstr "右から左へ"
+
+#: contents/ui/ConfigGeneral.qml:320
+#, kde-format
+msgctxt "@info:tooltip under a combobox when Touch Mode is on"
+msgid "Automatically set to Large when in Touch Mode"
+msgstr "タッチモード時に自動的に大に設定"
+
+#: contents/ui/ConfigGeneral.qml:345
+#, kde-format
+msgctxt "@title:column"
+msgid "Entries"
+msgstr "エントリ"
+
+#: contents/ui/ConfigGeneral.qml:349
+#, kde-format
+msgctxt "@option:check, This is referring to system tray entries"
+msgid "Always show all"
+msgstr "常にすべて表示"
+
+#: contents/ui/ConfigGeneral.qml:501
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Always shown next to the expander as part of the system cluster"
+msgstr "システムクラスターの一部として展開矢印の隣に常に表示"
+
+#: contents/ui/ExpanderArrow.qml:25
+#, kde-format
+msgid "Show all the items in the system tray in a popup"
+msgstr "システムトレイのすべての項目をポップアップに表示"
+
+#: contents/ui/ExpanderArrow.qml:55
+#, kde-format
+msgid "Close popup"
+msgstr "ポップアップを閉じる"
+
+#: contents/ui/ExpanderArrow.qml:55
+#, kde-format
+msgid "Show hidden icons"
+msgstr "非表示のアイコンを表示"
+
+
+#: contents/ui/components/AirplaneToggle.qml:12
+#, kde-format
+msgid "Airplane"
+msgstr "機内モード"
+
+#: contents/ui/components/AirplaneToggle.qml:22
+#, kde-format
+msgid "Airplane Mode — On"
+msgstr "機内モード — オン"
+
+#: contents/ui/components/AirplaneToggle.qml:22
+#, kde-format
+msgid "Airplane Mode — Off"
+msgstr "機内モード — オフ"
+
+#: contents/ui/components/BatteryPage.qml:14
+#, kde-format
+msgid "Battery"
+msgstr "バッテリー"
+
+#: contents/ui/components/BatterySaverToggle.qml:16
+#, kde-format
+msgid "Battery Saver"
+msgstr "バッテリーセーバー"
+
+#: contents/ui/components/BatteryPage.qml:157
+#, kde-format
+msgid "Battery health"
+msgstr "バッテリー健全性"
+
+#: contents/ui/components/BatteryPage.qml:251
+#, kde-format
+msgid "Block sleep & screen lock"
+msgstr "スリープと画面ロックをブロック"
+
+#: contents/ui/components/PowerProfilePage.qml:40
+#: contents/ui/components/BatteryPage.qml:208
+#, kde-format
+msgid "Balanced"
+msgstr "バランス"
+
+#: contents/ui/components/BluetoothToggle.qml:13
+#: contents/ui/components/BluetoothPage.qml:13
+#, kde-format
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: contents/ui/components/BluetoothToggle.qml:33
+#, kde-format
+msgid "Bluetooth — On, not connected"
+msgstr "Bluetooth — オン、未接続"
+
+#: contents/ui/components/BluetoothToggle.qml:30
+#, kde-format
+msgid "Bluetooth — Off"
+msgstr "Bluetooth — オフ"
+
+#: contents/ui/components/BluetoothToggle.qml:32
+#, kde-format
+msgid "Bluetooth — %1 connected"
+msgstr "Bluetooth — %1 台接続"
+
+#: contents/ui/components/BluetoothPage.qml:15
+#, kde-format
+msgid "Bluetooth is off"
+msgstr "Bluetoothはオフです"
+
+#: contents/ui/components/BluetoothToggle.qml:54
+#, kde-format
+msgid "Bluetooth settings"
+msgstr "Bluetooth設定"
+
+#: contents/ui/components/Footer.qml:37
+#, kde-format
+msgid "Charging — %1"
+msgstr "充電中 — %1"
+
+#: contents/ui/components/BatteryPage.qml:109
+#, kde-format
+msgid "Charging"
+msgstr "充電中"
+
+#: contents/ui/components/ClipboardPage.qml:18
+#, kde-format
+msgid "Clipboard"
+msgstr "クリップボード"
+
+#: contents/ui/components/ClipboardPage.qml:109
+#, kde-format
+msgid "Clipboard is empty"
+msgstr "クリップボードは空です"
+
+#: contents/ui/components/NetworkPage.qml:252
+#, kde-format
+msgid "Connect"
+msgstr "接続"
+
+#: contents/ui/components/NetworkToggle.qml:67
+#, kde-format
+msgid "Connect to hidden network…"
+msgstr "非表示のネットワークに接続…"
+
+#: contents/ui/components/NetworkPage.qml:77
+#, kde-format
+msgid "Connected, open"
+msgstr "接続済み、オープン"
+
+#: contents/ui/components/NetworkPage.qml:77
+#, kde-format
+msgid "Connected, secured"
+msgstr "接続済み、セキュア"
+
+#: contents/ui/components/BluetoothPage.qml:109
+#, kde-format
+msgid "Connected"
+msgstr "接続済み"
+
+#: contents/ui/components/NetworkToggle.qml:62
+#, kde-format
+msgid "Create hotspot…"
+msgstr "ホットスポットを作成…"
+
+#: contents/ui/components/ColorSchemeToggle.qml:13
+#, kde-format
+msgid "Dark Mode"
+msgstr "ダークモード"
+
+#: contents/ui/components/DeviceNotifierPage.qml:19
+#, kde-format
+msgid "Devices"
+msgstr "デバイス"
+
+#: contents/ui/components/NetworkPage.qml:432
+#, kde-format
+msgid "Disconnect"
+msgstr "切断"
+
+#: contents/ui/components/BluetoothPage.qml:109
+#, kde-format
+msgid "Disconnected"
+msgstr "切断済み"
+
+#: contents/ui/components/BatteryPage.qml:109
+#, kde-format
+msgid "Discharging"
+msgstr "放電中"
+
+#: contents/ui/components/BrightnessPage.qml:80
+#, kde-format
+msgid "Display %1"
+msgstr "ディスプレイ %1"
+
+#: contents/ui/components/Footer.qml:110
+#: contents/ui/components/BrightnessPage.qml:134
+#, kde-format
+msgid "Display settings"
+msgstr "ディスプレイ設定"
+
+#: contents/ui/components/DndToggle.qml:13
+#, kde-format
+msgid "Do Not Disturb"
+msgstr "マナーモード"
+
+#: contents/ui/components/DndToggle.qml:30
+#, kde-format
+msgid "Do Not Disturb — Off"
+msgstr "マナーモード — オフ"
+
+#: contents/ui/components/DndToggle.qml:30
+#, kde-format
+msgid "Do Not Disturb — On"
+msgstr "マナーモード — オン"
+
+#: contents/ui/js/funcs.js:13
+#, kde-format
+msgid "Disabled"
+msgstr "無効"
+
+#: contents/ui/components/Footer.qml:165
+#, kde-format
+msgid "Shut down"
+msgstr "シャットダウン"
+
+#: contents/ui/components/BatteryPage.qml:109
+#, kde-format
+msgid "Fully charged"
+msgstr "充電完了"
+
+#: contents/ui/components/HotspotToggle.qml:15
+#, kde-format
+msgid "Hotspot"
+msgstr "ホットスポット"
+
+#: contents/ui/components/HotspotToggle.qml:30
+#, kde-format
+msgid "Hotspot — Off"
+msgstr "ホットスポット — オフ"
+
+#: contents/ui/components/HotspotToggle.qml:30
+#, kde-format
+msgid "Hotspot — On"
+msgstr "ホットスポット — オン"
+
+#: contents/ui/components/Footer.qml:155
+#, kde-format
+msgid "Hibernate"
+msgstr "ハイバネート"
+
+#: contents/ui/components/volume/InputDeviceSection.qml:19
+#, kde-format
+msgid "Input Device"
+msgstr "入力デバイス"
+
+#: contents/ui/components/CastInvertToggle.qml:8
+#, kde-format
+msgid "Invert Colors"
+msgstr "色の反転"
+
+#: contents/ui/components/CastInvertToggle.qml:22
+#, kde-format
+msgid "Invert Colors — Toggle"
+msgstr "色の反転 — 切り替え"
+
+#: contents/ui/components/NotificationsPage.qml:104
+#, kde-format
+msgid "Just now"
+msgstr "たった今"
+
+#: contents/ui/components/NetworkToggle.qml:72
+#, kde-format
+msgid "Known networks…"
+msgstr "既知のネットワーク…"
+
+#: contents/ui/components/ColorSchemeToggle.qml:13
+#, kde-format
+msgid "Light Mode"
+msgstr "ライトモード"
+
+#: contents/ui/components/Footer.qml:140
+#, kde-format
+msgid "Lock"
+msgstr "ロック"
+
+#: contents/ui/components/Footer.qml:145
+#, kde-format
+msgid "Log out"
+msgstr "ログアウト"
+
+#: contents/ui/components/VolumeSlider.qml:56
+#, kde-format
+msgid "Mute"
+msgstr "ミュート"
+
+#: contents/ui/components/MicMuteToggle.qml:19
+#, kde-format
+msgid "Mic Muted"
+msgstr "マイクミュート"
+
+#: contents/ui/components/MicMuteToggle.qml:19
+#, kde-format
+msgid "Mic On"
+msgstr "マイクオン"
+
+#: contents/ui/components/MediaControllerPage.qml:18
+#, kde-format
+msgid "Media"
+msgstr "メディア"
+
+#: contents/ui/components/MediaControllerPage.qml:22
+#, kde-format
+msgid "More media settings"
+msgstr "その他のメディア設定"
+
+#: contents/ui/components/BluetoothPage.qml:18
+#, kde-format
+msgid "More Bluetooth settings"
+msgstr "その他のBluetooth設定"
+
+#: contents/ui/components/ClipboardPage.qml:22
+#, kde-format
+msgid "More clipboard settings"
+msgstr "その他のクリップボード設定"
+
+#: contents/ui/components/DeviceNotifierPage.qml:23
+#, kde-format
+msgid "More device settings"
+msgstr "その他のデバイス設定"
+
+#: contents/ui/components/NotificationsPage.qml:22
+#, kde-format
+msgid "More notification settings"
+msgstr "その他の通知設定"
+
+#: contents/ui/components/PowerProfilePage.qml:18
+#, kde-format
+msgid "More power settings"
+msgstr "その他の電源設定"
+
+#: contents/ui/components/VolumePage.qml:16
+#, kde-format
+msgid "More volume settings"
+msgstr "その他の音量設定"
+
+#: contents/ui/components/NetworkPage.qml:18
+#, kde-format
+msgid "More Wi-Fi settings"
+msgstr "その他のWi-Fi設定"
+
+#: contents/ui/components/DeviceNotifierPage.qml:147
+#, kde-format
+msgid "Mounted"
+msgstr "マウント済み"
+
+#: contents/ui/components/Footer.qml:130
+#, kde-format
+msgid "Notification settings"
+msgstr "通知設定"
+
+#: contents/ui/components/NotificationsPage.qml:80
+#, kde-format
+msgid "Notification"
+msgstr "通知"
+
+#: contents/ui/components/NotificationsPage.qml:123
+#, kde-format
+msgid "No notifications"
+msgstr "通知なし"
+
+#: contents/ui/components/VolumePage.qml:64
+#, kde-format
+msgid "No applications playing audio"
+msgstr "音声を再生中のアプリなし"
+
+#: contents/ui/components/BluetoothPage.qml:15
+#, kde-format
+msgid "No devices paired"
+msgstr "ペアリング済みデバイスなし"
+
+#: contents/ui/components/DeviceNotifierPage.qml:190
+#, kde-format
+msgid "No devices connected"
+msgstr "接続中デバイスなし"
+
+#: contents/ui/components/volume/InputDeviceSection.qml:26
+#, kde-format
+msgid "No input device"
+msgstr "入力デバイスなし"
+
+#: contents/ui/components/MediaControllerPage.qml:233
+#, kde-format
+msgid "No media playing"
+msgstr "再生中のメディアなし"
+
+#: contents/ui/components/NetworkPage.qml:15
+#, kde-format
+msgid "No available networks"
+msgstr "利用可能なネットワークなし"
+
+#: contents/ui/components/volume/OutputDeviceSection.qml:28
+#, kde-format
+msgid "No output device"
+msgstr "出力デバイスなし"
+
+#: contents/ui/components/InhibitSleepToggle.qml:8
+#, kde-format
+msgid "No Sleep"
+msgstr "スリープ禁止"
+
+#: contents/ui/components/Footer.qml:120
+#, kde-format
+msgid "Network settings"
+msgstr "ネットワーク設定"
+
+#: contents/ui/components/NetworkPage.qml:373
+#, kde-format
+msgid "Next"
+msgstr "次へ"
+
+#: contents/ui/components/NightLightToggle.qml:9
+#, kde-format
+msgid "Night Light"
+msgstr "ナイトライト"
+
+#: contents/ui/components/NightLightToggle.qml:26
+#, kde-format
+msgid "Night Light — Off"
+msgstr "ナイトライト — オフ"
+
+#: contents/ui/components/NightLightToggle.qml:25
+#, kde-format
+msgid "Night Light — On"
+msgstr "ナイトライト — オン"
+
+#: contents/ui/components/NightLightToggle.qml:23
+#, kde-format
+msgid "Night Light — Unavailable"
+msgstr "ナイトライト — 利用不可"
+
+#: contents/ui/components/BrightnessPage.qml:130
+#, kde-format
+msgid "Night color settings"
+msgstr "ナイトカラー設定"
+
+#: contents/ui/components/InhibitSleepToggle.qml:8
+#, kde-format
+msgid "Sleep Blocked"
+msgstr "スリープブロック中"
+
+#: contents/ui/components/InhibitSleepToggle.qml:58
+#, kde-format
+msgid "Sleep Allowed"
+msgstr "スリープ許可"
+
+#: contents/ui/components/InhibitSleepToggle.qml:58
+#, kde-format
+msgid "Sleep Inhibited"
+msgstr "スリープ抑制中"
+
+#: contents/ui/components/js/funcs.js:18
+#, kde-format
+msgid "Offline"
+msgstr "オフライン"
+
+#: contents/ui/components/Footer.qml:85
+#, kde-format
+msgid "Open System Settings"
+msgstr "システム設定を開く"
+
+#: contents/ui/components/NetworkToggle.qml:57
+#, kde-format
+msgid "Open Wi-Fi settings"
+msgstr "Wi-Fi設定を開く"
+
+#: contents/ui/components/NetworkPage.qml:288
+#, kde-format
+msgid "Password"
+msgstr "パスワード"
+
+#: contents/ui/components/PowerProfilePage.qml:10
+#, kde-format
+msgid "Power Mode"
+msgstr "電源モード"
+
+#: contents/ui/components/BatterySaverToggle.qml:35
+#, kde-format
+msgid "Power Mode — Balanced"
+msgstr "電源モード — バランス"
+
+#: contents/ui/components/BatterySaverToggle.qml:31
+#, kde-format
+msgid "Power Mode — Performance"
+msgstr "電源モード — パフォーマンス"
+
+#: contents/ui/components/BatterySaverToggle.qml:33
+#, kde-format
+msgid "Power Mode — Power Saver"
+msgstr "電源モード — 省電力"
+
+#: contents/ui/components/PowerProfilePage.qml:27
+#: contents/ui/components/BatteryPage.qml:195
+#, kde-format
+msgid "Power Profiles"
+msgstr "電源プロファイル"
+
+#: contents/ui/components/BatteryPage.qml:268
+#: contents/ui/components/Footer.qml:95
+#: contents/ui/components/Footer.qml:125
+#, kde-format
+msgid "Power settings"
+msgstr "電源設定"
+
+#: contents/ui/components/Footer.qml:71
+#, kde-format
+msgid "Power off / Log out"
+msgstr "電源オフ / ログアウト"
+
+#: contents/ui/components/PowerProfilePage.qml:38
+#: contents/ui/components/BatteryPage.qml:206
+#, kde-format
+msgid "Performance"
+msgstr "パフォーマンス"
+
+#: contents/ui/components/PowerProfilePage.qml:42
+#: contents/ui/components/BatteryPage.qml:210
+#, kde-format
+msgid "Power Saver"
+msgstr "省電力"
+
+#: contents/ui/components/DeviceNotifierPage.qml:147
+#, kde-format
+msgid "Not mounted"
+msgstr "未マウント"
+
+#: contents/ui/components/DeviceNotifierPage.qml:62
+#, kde-format
+msgid "Removable device"
+msgstr "リムーバブルデバイス"
+
+#: contents/ui/components/Footer.qml:160
+#, kde-format
+msgid "Restart"
+msgstr "再起動"
+
+#: contents/ui/components/ColorSchemeToggle.qml:29
+#, kde-format
+msgid "Switch to dark mode"
+msgstr "ダークモードに切り替え"
+
+#: contents/ui/components/ColorSchemeToggle.qml:29
+#, kde-format
+msgid "Switch to light mode"
+msgstr "ライトモードに切り替え"
+
+#: contents/ui/components/Footer.qml:150
+#, kde-format
+msgid "Suspend"
+msgstr "サスペンド"
+
+#: contents/ui/components/VolumeSlider.qml:64
+#, kde-format
+msgid "Test sound"
+msgstr "音声テスト"
+
+#: contents/ui/components/TouchpadToggle.qml:10
+#, kde-format
+msgid "Touchpad Off"
+msgstr "タッチパッドオフ"
+
+#: contents/ui/components/TouchpadToggle.qml:10
+#, kde-format
+msgid "Touchpad On"
+msgstr "タッチパッドオン"
+
+#: contents/ui/components/TouchpadToggle.qml:34
+#, kde-format
+msgid "Touchpad — Disabled"
+msgstr "タッチパッド — 無効"
+
+#: contents/ui/components/TouchpadToggle.qml:34
+#, kde-format
+msgid "Touchpad — Enabled"
+msgstr "タッチパッド — 有効"
+
+#: contents/ui/components/BluetoothPage.qml:38
+#, kde-format
+msgid "Add new device"
+msgstr "新しいデバイスを追加"
+
+#: contents/ui/components/BluetoothToggle.qml:44
+#, kde-format
+msgid "Add new device…"
+msgstr "新しいデバイスを追加…"
+
+#: contents/ui/components/BluetoothToggle.qml:49
+#, kde-format
+msgid "Send file…"
+msgstr "ファイルを送信…"
+
+#: contents/ui/components/Footer.qml:100
+#, kde-format
+msgid "Show battery info"
+msgstr "バッテリー情報を表示"
+
+#: contents/ui/components/Footer.qml:42
+#, kde-format
+msgid "%1 — %2h %3m remaining"
+msgstr "%1 — 残り %2時間 %3分"
+
+#: contents/ui/components/NotificationsPage.qml:105
+#, kde-format
+msgid "%1m ago"
+msgstr "%1分前"
+
+#: contents/ui/components/NotificationsPage.qml:106
+#, kde-format
+msgid "%1h ago"
+msgstr "%1時間前"
+
+#: contents/ui/components/NotificationsPage.qml:107
+#, kde-format
+msgid "%1d ago"
+msgstr "%1日前"
+
+#: contents/ui/components/MicMuteToggle.qml:29
+#, kde-format
+msgid "Microphone — Active"
+msgstr "マイク — アクティブ"
+
+#: contents/ui/components/MicMuteToggle.qml:29
+#, kde-format
+msgid "Microphone — Muted"
+msgstr "マイク — ミュート"
+
+#: contents/ui/components/NetworkPage.qml:83
+#: contents/ui/components/NetworkPage.qml:275
+#, kde-format
+msgid "Enter the network security key"
+msgstr "ネットワークセキュリティキーを入力"
+
+#: contents/ui/components/NetworkPage.qml:343
+#, kde-format
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: contents/ui/js/funcs.js:22
+#, kde-format
+msgid "Not Connected"
+msgstr "未接続"
+
+#: contents/ui/js/funcs.js:16
+#, kde-format
+msgid "Unavailable"
+msgstr "利用不可"
+
+#: contents/ui/components/VolumeSlider.qml:56
+#, kde-format
+msgid "Unmute"
+msgstr "ミュート解除"
+
+#: contents/ui/components/NetworkPage.qml:15
+#, kde-format
+msgid "Wi-Fi is off"
+msgstr "Wi-Fiはオフです"
+
+#: contents/ui/components/NetworkToggle.qml:28
+#: contents/ui/components/NetworkPage.qml:13
+#, kde-format
+msgid "Wi-Fi"
+msgstr "Wi-Fi"
+
+#: contents/ui/components/NetworkToggle.qml:47
+#, kde-format
+msgid "Wi-Fi — Off"
+msgstr "Wi-Fi — オフ"
+
+#: contents/ui/components/NetworkToggle.qml:47
+#, kde-format
+msgid "Wi-Fi — On"
+msgstr "Wi-Fi — オン"
+
+#: contents/ui/components/ClipboardPage.qml:88
+#, kde-format
+msgid "(empty)"
+msgstr "（空）"
+
+#: contents/ui/components/NotificationsPage.qml:18
+#, kde-format
+msgid "Notifications"
+msgstr "通知"
+
+#: contents/ui/components/VolumePage.qml:12
+#, kde-format
+msgid "Volume"
+msgstr "音量"
+
+#: contents/ui/components/volume/VolumeMixerSection.qml:17
+#, kde-format
+msgid "Volume Mixer"
+msgstr "音量ミキサー"
+
+#: contents/ui/components/volume/OutputDeviceSection.qml:18
+#, kde-format
+msgid "Output Device"
+msgstr "出力デバイス"
+
+#: contents/ui/components/BrightnessPage.qml:13
+#, kde-format
+msgid "Brightness"
+msgstr "明るさ"
+
+#: contents/ui/components/VolumeSlider.qml:69
+#, kde-format
+msgid "Audio settings"
+msgstr "オーディオ設定"
+
+#: contents/ui/components/Footer.qml:115
+#, kde-format
+msgid "Sound settings"
+msgstr "サウンド設定"
+
+#: contents/ui/components/volume/InputDeviceSection.qml:77
+#: contents/ui/components/volume/OutputDeviceSection.qml:69
+#, kde-format
+msgid "Unknown device"
+msgstr "不明なデバイス"
+
+#: contents/ui/components/volume/VolumeMixerSection.qml:52
+#, kde-format
+msgid "Unknown application"
+msgstr "不明なアプリケーション"
+
+#: contents/ui/components/MediaControllerPage.qml:107
+#, kde-format
+msgid "Unknown track"
+msgstr "不明なトラック"
+
+#: contents/ui/components/MediaControllerPage.qml:116
+#, kde-format
+msgid "Unknown artist"
+msgstr "不明なアーティスト"
+
+#: contents/ui/components/NetworkPage.qml:80
+#: contents/ui/components/NetworkPage.qml:397
+#, kde-format
+msgid "Verifying and connecting"
+msgstr "認証して接続中"
+
+#: contents/ui/components/NetworkToggle.qml:28
+#, kde-format
+msgid "Wi-Fi/网络"
+msgstr "Wi-Fi/ネットワーク"
+
+#: contents/ui/ActionPanel.qml:99
+#, kde-format
+msgid "Settings"
+msgstr "設定"
+
+#: contents/ui/ActionPanel.qml:105
+#, kde-format
+msgid "Charging — %1%"
+msgstr "充電中 — %1%"
+
+#: contents/ui/ActionPanel.qml:106
+#, kde-format
+msgid "Discharging — %1%"
+msgstr "放電中 — %1%"

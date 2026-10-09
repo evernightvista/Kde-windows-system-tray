@@ -45,8 +45,6 @@
       Double-click and drag to reorder Quick Settings tiles. Your layout persists across sessions.
     </td>
     <td width="50%" valign="top">
-      <h3>🎨 Matching Icons</h3>
-      The bundled WindowsModern-WhiteSurApps theme rounds out the look.
     </td>
   </tr>
 </table>
@@ -64,7 +62,6 @@ curl -fsSL https://github.com/RaceConditionWinner/Kde-windows-system-tray/releas
 This automatically:
 
 - downloads the prebuilt System Tray plugin and verifies it against SHA-256 checksums
-- installs and activates the WindowsModern-WhiteSurApps icon theme
 - replaces the stock System Tray on your panel, preserving its position
 - reloads Plasma and verifies the install
 
@@ -96,11 +93,6 @@ For other distros, or if you'd rather build from source.
    ./dev.sh
    ```
 4. Add "System Tray (Windows Modern)" to your panel: right-click the panel → **Add or Manage Widgets…**
-5. (Optional) Install the icon theme, still from inside `system-tray/`:
-   ```bash
-   cp -r ../windows-icon/WindowsModern-WhiteSurApps ~/.local/share/icons/
-   ```
-   then set it via System Settings → Colors & Themes → Icons.
 
 The manual path builds from source and never touches your panel layout automatically.
 
@@ -125,17 +117,15 @@ more than once.
 
 Source code lives in [`system-tray/`](system-tray) — see
 [`system-tray/BUILD.md`](system-tray/BUILD.md) for build dependencies and
-development instructions. The icon theme is under
-[`windows-icon/WindowsModern-WhiteSurApps/`](windows-icon/WindowsModern-WhiteSurApps).
+development instructions.
 
 <br>
 
 ## 🙌 Credits
 
-This project builds upon: 
+This project builds upon:
 
 - [Jeysef/KDE-Windows-Modern](https://github.com/Jeysef/KDE-Windows-Modern) — the System Tray plugin in `system-tray/` is a modified fork of this, itself built on KDE's plasma-workspace System Tray
-- [WhiteSur-icon-theme](https://github.com/vinceliuice/WhiteSur-icon-theme) — the icon theme is a derivative of this
 
 Original source headers and applicable license notices are preserved in the project source files.
 

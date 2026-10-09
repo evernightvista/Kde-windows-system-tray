@@ -9,17 +9,24 @@ function btStatus(btManager) {
         }
     }
 
+    // Bluetooth icon names (per user spec): the tile draws its icon from
+    // the Blueberry tray icon family — "blueberry-tray-disabled-symbolic"
+    // when powered off / unavailable / blocked, and "blueberry-tray-symbolic"
+    // when powered on (with or without connected devices). The on/off
+    // distinction is what the icon conveys; the number of connected
+    // devices and the friendly device name are surfaced via the `active`
+    // flag, the status message, and the tile's tooltip instead.
     if (btManager.bluetoothBlocked) {
-        return { active: false, message: qsTr("Disabled"), icon: "network-bluetooth-inactive-symbolic" };
+        return { active: false, message: i18n("Disabled"), icon: "blueberry-tray-disabled-symbolic" };
     } else if (!btManager.bluetoothOperational) {
         if (!btManager.adapters.length) {
-            return { active: false, message: qsTr("Unavailable"), icon: "network-bluetooth-inactive-symbolic" };
+            return { active: false, message: i18n("Unavailable"), icon: "blueberry-tray-disabled-symbolic" };
         }
-        return { active: false, message: qsTr("Offline"), icon: "network-bluetooth-inactive-symbolic" };
+        return { active: false, message: i18n("Offline"), icon: "blueberry-tray-disabled-symbolic" };
     } else if (connectedDevices.length >= 1) {
-        return { active: true, message: connectedDevices[0].name, icon: "network-bluetooth-activated-symbolic" };
+        return { active: true, message: connectedDevices[0].name, icon: "blueberry-tray-symbolic" };
     }
-    return { active: true, message: qsTr("Not Connected"), icon: "network-bluetooth-symbolic" };
+    return { active: true, message: i18n("Not Connected"), icon: "blueberry-tray-symbolic" };
 }
 
 function toggleBluetooth(btManager) {

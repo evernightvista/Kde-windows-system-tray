@@ -64,6 +64,17 @@ KSvg.FrameSvgItem {
         function onExpandedChanged() {
             Qt.callLater(currentItemHighLight.updateHighlightedItem);
         }
+
+        // actionPanelShowing is derived from expanded && !activeApplet &&
+        // !hiddenItemsRequested. The two handlers above cover changes in
+        // expanded and activeApplet, but a transition between the "Show
+        // hidden items" view and the Action Panel keeps both of those
+        // unchanged (activeApplet stays null, expanded stays true) and only
+        // flips hiddenItemsRequested — which would otherwise leave the
+        // highlight stuck on its previous target.
+        function onHiddenItemsRequestedChanged() {
+            Qt.callLater(currentItemHighLight.updateHighlightedItem);
+        }
     }
 
     // update when applet changes parent (e.g. moves from active to hidden icons)
@@ -99,7 +110,20 @@ KSvg.FrameSvgItem {
 
     function updateHighlightedItem() {
         if (systemTrayState.expanded) {
-            if (systemTrayState.activeApplet && systemTrayState.activeApplet.parent && systemTrayState.activeApplet.parent.inVisibleLayout) {
+            // Action Panel (system-cluster quick settings) is open: highlight
+            // only the cluster container (Network/Volume/Battery group),
+            // using the same Plasma 6 tabbar SVG used for a single active
+            // applet. Without this branch, actionPanelShowing leaves
+            // activeApplet null (showActionPanel calls setActiveApplet(null)),
+            // so the previous logic fell through to the "Show hidden items"
+            // else-branch and highlighted `parent` (the whole tray) — which
+            // incorrectly highlighted every SNI icon too. forceEdgeHighlight
+            // is false so the tabbar sizes to the cluster (plus container
+            // margins when the tray is a single row/column, matching the
+            // per-applet active highlight).
+            if (systemTrayState.actionPanelShowing && parent.clusterContainer) {
+                changeHighlightedItem(parent.clusterContainer, /*forceEdgeHighlight*/false);
+            } else if (systemTrayState.activeApplet && systemTrayState.activeApplet.parent && systemTrayState.activeApplet.parent.inVisibleLayout) {
                 changeHighlightedItem(systemTrayState.activeApplet.parent.container, /*forceEdgeHighlight*/false);
             } else { // 'Show hidden items' popup
                 changeHighlightedItem(parent, /*forceEdgeHighlight*/true);

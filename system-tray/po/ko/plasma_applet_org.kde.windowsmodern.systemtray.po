@@ -1,0 +1,994 @@
+# Korean translations for kde-windows-system-tray.
+# Copyright (C) 2026 This file is distributed under the LGPL-2.0-or-later license.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_org.kde.windowsmodern.systemtray\n"
+"Report-Msgid-Bugs-To: https://github.com/RaceConditionWinner/Kde-windows-system-tray/issues\n"
+"POT-Creation-Date: 2026-10-08 00:00+0000\n"
+"PO-Revision-Date: 2026-10-08 00:00+0900\n"
+"Last-Translator: KDE Windows Modern System Tray Team\n"
+"Language-Team: Korean <kde-i18n-doc@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: contents/ui/config.qml:13
+msgid "General"
+msgstr "일반"
+
+#: contents/ui/BackgroundAppItem.qml:76
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Quit %1"
+msgstr "%1 종료"
+
+#: contents/ui/ExpandedRepresentation.qml:110
+#, kde-format
+msgctxt "@action:button"
+msgid "Go Back"
+msgstr "뒤로"
+
+#: contents/ui/ExpandedRepresentation.qml:123
+#, kde-format
+msgid "Status and Notifications"
+msgstr "상태 및 알림"
+
+#: contents/ui/ExpandedRepresentation.qml:176
+#, kde-format
+msgid "More actions"
+msgstr "추가 동작"
+
+#: contents/ui/ExpandedRepresentation.qml:224
+#, kde-format
+msgid "Keep Open"
+msgstr "열어 두기"
+
+#: contents/ui/ConfigGeneral.qml:58
+#, kde-format
+msgctxt "@item:inlistbox Show this System Tray item when relevant"
+msgid "Show when relevant"
+msgstr "관련될 때 표시"
+
+#: contents/ui/ConfigGeneral.qml:62
+#, kde-format
+msgctxt "@item:inlistbox Always show this System Tray item"
+msgid "Always show"
+msgstr "항상 표시"
+
+#: contents/ui/ConfigGeneral.qml:66
+#, kde-format
+msgctxt "@item:inlistbox Show this System Tray item only in the expanded popup"
+msgid "Show only in popup"
+msgstr "팝업에서만 표시"
+
+#: contents/ui/ConfigGeneral.qml:70
+#, kde-format
+msgctxt "@item:inlistbox Never show this System Tray item; disable it"
+msgid "Never show (disabled)"
+msgstr "표시 안 함(사용 안 함)"
+
+#: contents/ui/ConfigGeneral.qml:141
+#, kde-format
+msgid "Application Status"
+msgstr "프로그램 상태"
+
+#: contents/ui/ConfigGeneral.qml:143
+#, kde-format
+msgid "Communications"
+msgstr "통신"
+
+#: contents/ui/ConfigGeneral.qml:145
+#, kde-format
+msgid "System Services"
+msgstr "시스템 서비스"
+
+#: contents/ui/ConfigGeneral.qml:147
+#, kde-format
+msgid "Hardware Control"
+msgstr "하드웨어 제어"
+
+#: contents/ui/ConfigGeneral.qml:150
+#, kde-format
+msgid "Miscellaneous"
+msgstr "기타"
+
+#: contents/ui/ConfigGeneral.qml:187
+#, kde-format
+msgctxt "@info:usagetip"
+msgid ""
+"Look for a setting in <application>%1</application> to disable its tray icon "
+"before doing it here. Some apps’ tray icons were not designed to be "
+"disabled, and using this setting may cause them to behave unexpectedly."
+"<nl/><nl/>Use this setting at your own risk, and do not report issues to "
+"KDE or the app’s author."
+msgstr ""
+"여기서 비활성화하기 전에 <application>%1</application>에서 트레이 아이콘을 비활성화하는 설정"
+"을 찾아보십시오. 일부 프로그램의 트레이 아이콘은 비활성화하도록 설계되지 않았으며, 이 설정"
+"을 사용하면 예상치 못한 동작이 발생할 수 있습니다.<nl/><nl/>이 설정은 본인 책임하에 사용"
+"하며, KDE나 프로그램 작성자에게 문제를 보고하지 마십시오."
+
+#: contents/ui/ConfigGeneral.qml:190
+#, kde-format
+msgctxt "@action:button"
+msgid "I understand the risks"
+msgstr "위험을 이해합니다"
+
+#: contents/ui/ConfigGeneral.qml:202
+#, kde-format
+msgctxt "@info:usagetip"
+msgid ""
+"Disabling the clipboard is not recommended, as it will cause copied data to "
+"be lost when the application it was copied from is closed.<nl/><nl/>Only do "
+"this if you’ve manually added a standalone Clipboard widget somewhere else, "
+"or are using a 3rd-party clipboard manager. Also, instead consider "
+"configuring the clipboard to not save history, or to only remember one "
+"item at a time."
+msgstr ""
+"클립보드를 비활성화하는 것은 권장하지 않습니다. 데이터를 복사한 프로그램을 닫을 때 복사"
+"한 데이터가 손실되기 때문입니다.<nl/><nl/>다른 위치에 독립적인 클립보드 위젯을 수동으로 "
+"추가했거나, 타사 클립보드 관리자를 사용하는 경우에만 이렇게 하십시오. 또한 클립보드"
+"에서 기록을 저장하지 않도록 설정하거나 한 번에 하나의 항목만 기억하도록 설정"
+"하는 것도 고려하십시오."
+
+#: contents/ui/ConfigGeneral.qml:211
+#, kde-format
+msgctxt "@info:usagetip"
+msgid ""
+"Disabling the Notifications widget is not recommended, as notifications sent "
+"by apps will no longer be shown.<nl/><nl/>Only do this if you’ve manually "
+"added a standalone Notifications widget somewhere else, or are intentionally "
+"using a 3rd-party notification manager to handle notifications."
+msgstr ""
+"알림 위젯을 비활성화하는 것은 권장하지 않습니다. 프로그램에서 보낸 알림이 더 이상 표"
+"시되지 않기 때문입니다.<nl/><nl/>다른 위치에 독립적인 알림 위젯을 수동으로 추가했거나, "
+"의도적으로 타사 알림 관리자를 사용하여 알림을 처리하는 경우에만 이렇게 하십시오."
+
+#: contents/ui/ConfigGeneral.qml:223
+#, kde-format
+msgctxt "@item:inlistbox Icon size"
+msgid "Scale with Panel height"
+msgstr "패널 높이에 맞춰 크기 조정"
+
+#: contents/ui/ConfigGeneral.qml:224
+#, kde-format
+msgctxt "@item:inlistbox Icon size"
+msgid "Scale with Panel width"
+msgstr "패널 너비에 맞춰 크기 조정"
+
+#: contents/ui/ConfigGeneral.qml:226
+#, kde-format
+msgctxt ""
+"@label:listbox Whether the system tray icons in the Panel always stay small "
+"or scale with the Panel's size"
+msgid "Panel icon size:"
+msgstr "패널 아이콘 크기:"
+
+#: contents/ui/ConfigGeneral.qml:230
+#, kde-format
+msgctxt "@item:inlistbox Icon size"
+msgid "Small"
+msgstr "작게"
+
+#: contents/ui/ConfigGeneral.qml:250
+#, kde-format
+msgctxt "@label:listbox The spacing between system tray icons in the Panel"
+msgid "Spacing:"
+msgstr "간격:"
+
+#: contents/ui/ConfigGeneral.qml:254
+#, kde-format
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Small"
+msgstr "좁게"
+
+#: contents/ui/ConfigGeneral.qml:258
+#, kde-format
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Normal"
+msgstr "보통"
+
+#: contents/ui/ConfigGeneral.qml:262
+#, kde-format
+msgctxt "@item:inlistbox Icon spacing"
+msgid "Large"
+msgstr "넓게"
+
+#: contents/ui/ConfigGeneral.qml:282
+#, kde-format
+msgctxt ""
+"@label:listbox Which direction system tray icons in the Panel emerge from "
+"the expander arrow"
+msgid "Direction:"
+msgstr "방향:"
+
+#: contents/ui/ConfigGeneral.qml:296
+#, kde-format
+msgid "Bottom-to-top"
+msgstr "아래에서 위로"
+
+#: contents/ui/ConfigGeneral.qml:297
+#, kde-format
+msgid "Top-to-bottom"
+msgstr "위에서 아래로"
+
+#: contents/ui/ConfigGeneral.qml:302
+#: contents/ui/ConfigGeneral.qml:309
+#, kde-format
+msgid "Left-to-right"
+msgstr "왼쪽에서 오른쪽으로"
+
+#: contents/ui/ConfigGeneral.qml:303
+#: contents/ui/ConfigGeneral.qml:308
+#, kde-format
+msgid "Right-to-left"
+msgstr "오른쪽에서 왼쪽으로"
+
+#: contents/ui/ConfigGeneral.qml:320
+#, kde-format
+msgctxt "@info:tooltip under a combobox when Touch Mode is on"
+msgid "Automatically set to Large when in Touch Mode"
+msgstr "터치 모드일 때 자동으로 넓게로 설정"
+
+#: contents/ui/ConfigGeneral.qml:345
+#, kde-format
+msgctxt "@title:column"
+msgid "Entries"
+msgstr "항목"
+
+#: contents/ui/ConfigGeneral.qml:349
+#, kde-format
+msgctxt "@option:check, This is referring to system tray entries"
+msgid "Always show all"
+msgstr "항상 모두 표시"
+
+#: contents/ui/ConfigGeneral.qml:501
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Always shown next to the expander as part of the system cluster"
+msgstr "시스템 클러스터의 일부로 확장 화살표 옆에 항상 표시"
+
+#: contents/ui/ExpanderArrow.qml:25
+#, kde-format
+msgid "Show all the items in the system tray in a popup"
+msgstr "시스템 트레이의 모든 항목을 팝업에 표시"
+
+#: contents/ui/ExpanderArrow.qml:55
+#, kde-format
+msgid "Close popup"
+msgstr "팝업 닫기"
+
+#: contents/ui/ExpanderArrow.qml:55
+#, kde-format
+msgid "Show hidden icons"
+msgstr "숨겨진 아이콘 표시"
+
+
+#: contents/ui/components/AirplaneToggle.qml:12
+#, kde-format
+msgid "Airplane"
+msgstr "비행기 모드"
+
+#: contents/ui/components/AirplaneToggle.qml:22
+#, kde-format
+msgid "Airplane Mode — On"
+msgstr "비행기 모드 — 켜짐"
+
+#: contents/ui/components/AirplaneToggle.qml:22
+#, kde-format
+msgid "Airplane Mode — Off"
+msgstr "비행기 모드 — 꺼짐"
+
+#: contents/ui/components/BatteryPage.qml:14
+#, kde-format
+msgid "Battery"
+msgstr "배터리"
+
+#: contents/ui/components/BatterySaverToggle.qml:16
+#, kde-format
+msgid "Battery Saver"
+msgstr "배터리 절약"
+
+#: contents/ui/components/BatteryPage.qml:157
+#, kde-format
+msgid "Battery health"
+msgstr "배터리 상태"
+
+#: contents/ui/components/BatteryPage.qml:251
+#, kde-format
+msgid "Block sleep & screen lock"
+msgstr "절전 및 화면 잠금 차단"
+
+#: contents/ui/components/PowerProfilePage.qml:40
+#: contents/ui/components/BatteryPage.qml:208
+#, kde-format
+msgid "Balanced"
+msgstr "균형"
+
+#: contents/ui/components/BluetoothToggle.qml:13
+#: contents/ui/components/BluetoothPage.qml:13
+#, kde-format
+msgid "Bluetooth"
+msgstr "블루투스"
+
+#: contents/ui/components/BluetoothToggle.qml:33
+#, kde-format
+msgid "Bluetooth — On, not connected"
+msgstr "블루투스 — 켜짐, 연결되지 않음"
+
+#: contents/ui/components/BluetoothToggle.qml:30
+#, kde-format
+msgid "Bluetooth — Off"
+msgstr "블루투스 — 꺼짐"
+
+#: contents/ui/components/BluetoothToggle.qml:32
+#, kde-format
+msgid "Bluetooth — %1 connected"
+msgstr "블루투스 — %1개 연결됨"
+
+#: contents/ui/components/BluetoothPage.qml:15
+#, kde-format
+msgid "Bluetooth is off"
+msgstr "블루투스가 꺼져 있습니다"
+
+#: contents/ui/components/BluetoothToggle.qml:54
+#, kde-format
+msgid "Bluetooth settings"
+msgstr "블루투스 설정"
+
+#: contents/ui/components/Footer.qml:37
+#, kde-format
+msgid "Charging — %1"
+msgstr "충전 중 — %1"
+
+#: contents/ui/components/BatteryPage.qml:109
+#, kde-format
+msgid "Charging"
+msgstr "충전 중"
+
+#: contents/ui/components/ClipboardPage.qml:18
+#, kde-format
+msgid "Clipboard"
+msgstr "클립보드"
+
+#: contents/ui/components/ClipboardPage.qml:109
+#, kde-format
+msgid "Clipboard is empty"
+msgstr "클립보드가 비어 있습니다"
+
+#: contents/ui/components/NetworkPage.qml:252
+#, kde-format
+msgid "Connect"
+msgstr "연결"
+
+#: contents/ui/components/NetworkToggle.qml:67
+#, kde-format
+msgid "Connect to hidden network…"
+msgstr "숨겨진 네트워크에 연결…"
+
+#: contents/ui/components/NetworkPage.qml:77
+#, kde-format
+msgid "Connected, open"
+msgstr "연결됨, 개방형"
+
+#: contents/ui/components/NetworkPage.qml:77
+#, kde-format
+msgid "Connected, secured"
+msgstr "연결됨, 보안됨"
+
+#: contents/ui/components/BluetoothPage.qml:109
+#, kde-format
+msgid "Connected"
+msgstr "연결됨"
+
+#: contents/ui/components/NetworkToggle.qml:62
+#, kde-format
+msgid "Create hotspot…"
+msgstr "핫스팟 만들기…"
+
+#: contents/ui/components/ColorSchemeToggle.qml:13
+#, kde-format
+msgid "Dark Mode"
+msgstr "다크 모드"
+
+#: contents/ui/components/DeviceNotifierPage.qml:19
+#, kde-format
+msgid "Devices"
+msgstr "장치"
+
+#: contents/ui/components/NetworkPage.qml:432
+#, kde-format
+msgid "Disconnect"
+msgstr "연결 끊기"
+
+#: contents/ui/components/BluetoothPage.qml:109
+#, kde-format
+msgid "Disconnected"
+msgstr "연결 끊김"
+
+#: contents/ui/components/BatteryPage.qml:109
+#, kde-format
+msgid "Discharging"
+msgstr "방전 중"
+
+#: contents/ui/components/BrightnessPage.qml:80
+#, kde-format
+msgid "Display %1"
+msgstr "디스플레이 %1"
+
+#: contents/ui/components/Footer.qml:110
+#: contents/ui/components/BrightnessPage.qml:134
+#, kde-format
+msgid "Display settings"
+msgstr "디스플레이 설정"
+
+#: contents/ui/components/DndToggle.qml:13
+#, kde-format
+msgid "Do Not Disturb"
+msgstr "방해 금지"
+
+#: contents/ui/components/DndToggle.qml:30
+#, kde-format
+msgid "Do Not Disturb — Off"
+msgstr "방해 금지 — 꺼짐"
+
+#: contents/ui/components/DndToggle.qml:30
+#, kde-format
+msgid "Do Not Disturb — On"
+msgstr "방해 금지 — 켜짐"
+
+#: contents/ui/js/funcs.js:13
+#, kde-format
+msgid "Disabled"
+msgstr "사용 안 함"
+
+#: contents/ui/components/Footer.qml:165
+#, kde-format
+msgid "Shut down"
+msgstr "시스템 종료"
+
+#: contents/ui/components/BatteryPage.qml:109
+#, kde-format
+msgid "Fully charged"
+msgstr "완전히 충전됨"
+
+#: contents/ui/components/HotspotToggle.qml:15
+#, kde-format
+msgid "Hotspot"
+msgstr "핫스팟"
+
+#: contents/ui/components/HotspotToggle.qml:30
+#, kde-format
+msgid "Hotspot — Off"
+msgstr "핫스팟 — 꺼짐"
+
+#: contents/ui/components/HotspotToggle.qml:30
+#, kde-format
+msgid "Hotspot — On"
+msgstr "핫스팟 — 켜짐"
+
+#: contents/ui/components/Footer.qml:155
+#, kde-format
+msgid "Hibernate"
+msgstr "최대 절전"
+
+#: contents/ui/components/volume/InputDeviceSection.qml:19
+#, kde-format
+msgid "Input Device"
+msgstr "입력 장치"
+
+#: contents/ui/components/CastInvertToggle.qml:8
+#, kde-format
+msgid "Invert Colors"
+msgstr "색상 반전"
+
+#: contents/ui/components/CastInvertToggle.qml:22
+#, kde-format
+msgid "Invert Colors — Toggle"
+msgstr "색상 반전 — 전환"
+
+#: contents/ui/components/NotificationsPage.qml:104
+#, kde-format
+msgid "Just now"
+msgstr "방금 전"
+
+#: contents/ui/components/NetworkToggle.qml:72
+#, kde-format
+msgid "Known networks…"
+msgstr "알려진 네트워크…"
+
+#: contents/ui/components/ColorSchemeToggle.qml:13
+#, kde-format
+msgid "Light Mode"
+msgstr "라이트 모드"
+
+#: contents/ui/components/Footer.qml:140
+#, kde-format
+msgid "Lock"
+msgstr "잠금"
+
+#: contents/ui/components/Footer.qml:145
+#, kde-format
+msgid "Log out"
+msgstr "로그아웃"
+
+#: contents/ui/components/VolumeSlider.qml:56
+#, kde-format
+msgid "Mute"
+msgstr "음소거"
+
+#: contents/ui/components/MicMuteToggle.qml:19
+#, kde-format
+msgid "Mic Muted"
+msgstr "마이크 음소거"
+
+#: contents/ui/components/MicMuteToggle.qml:19
+#, kde-format
+msgid "Mic On"
+msgstr "마이크 켜짐"
+
+#: contents/ui/components/MediaControllerPage.qml:18
+#, kde-format
+msgid "Media"
+msgstr "미디어"
+
+#: contents/ui/components/MediaControllerPage.qml:22
+#, kde-format
+msgid "More media settings"
+msgstr "추가 미디어 설정"
+
+#: contents/ui/components/BluetoothPage.qml:18
+#, kde-format
+msgid "More Bluetooth settings"
+msgstr "추가 블루투스 설정"
+
+#: contents/ui/components/ClipboardPage.qml:22
+#, kde-format
+msgid "More clipboard settings"
+msgstr "추가 클립보드 설정"
+
+#: contents/ui/components/DeviceNotifierPage.qml:23
+#, kde-format
+msgid "More device settings"
+msgstr "추가 장치 설정"
+
+#: contents/ui/components/NotificationsPage.qml:22
+#, kde-format
+msgid "More notification settings"
+msgstr "추가 알림 설정"
+
+#: contents/ui/components/PowerProfilePage.qml:18
+#, kde-format
+msgid "More power settings"
+msgstr "추가 전원 설정"
+
+#: contents/ui/components/VolumePage.qml:16
+#, kde-format
+msgid "More volume settings"
+msgstr "추가 음량 설정"
+
+#: contents/ui/components/NetworkPage.qml:18
+#, kde-format
+msgid "More Wi-Fi settings"
+msgstr "추가 Wi-Fi 설정"
+
+#: contents/ui/components/DeviceNotifierPage.qml:147
+#, kde-format
+msgid "Mounted"
+msgstr "마운트됨"
+
+#: contents/ui/components/Footer.qml:130
+#, kde-format
+msgid "Notification settings"
+msgstr "알림 설정"
+
+#: contents/ui/components/NotificationsPage.qml:80
+#, kde-format
+msgid "Notification"
+msgstr "알림"
+
+#: contents/ui/components/NotificationsPage.qml:123
+#, kde-format
+msgid "No notifications"
+msgstr "알림 없음"
+
+#: contents/ui/components/VolumePage.qml:64
+#, kde-format
+msgid "No applications playing audio"
+msgstr "오디오를 재생하는 프로그램 없음"
+
+#: contents/ui/components/BluetoothPage.qml:15
+#, kde-format
+msgid "No devices paired"
+msgstr "페어링된 장치 없음"
+
+#: contents/ui/components/DeviceNotifierPage.qml:190
+#, kde-format
+msgid "No devices connected"
+msgstr "연결된 장치 없음"
+
+#: contents/ui/components/volume/InputDeviceSection.qml:26
+#, kde-format
+msgid "No input device"
+msgstr "입력 장치 없음"
+
+#: contents/ui/components/MediaControllerPage.qml:233
+#, kde-format
+msgid "No media playing"
+msgstr "재생 중인 미디어 없음"
+
+#: contents/ui/components/NetworkPage.qml:15
+#, kde-format
+msgid "No available networks"
+msgstr "사용 가능한 네트워크 없음"
+
+#: contents/ui/components/volume/OutputDeviceSection.qml:28
+#, kde-format
+msgid "No output device"
+msgstr "출력 장치 없음"
+
+#: contents/ui/components/InhibitSleepToggle.qml:8
+#, kde-format
+msgid "No Sleep"
+msgstr "절전 안 함"
+
+#: contents/ui/components/Footer.qml:120
+#, kde-format
+msgid "Network settings"
+msgstr "네트워크 설정"
+
+#: contents/ui/components/NetworkPage.qml:373
+#, kde-format
+msgid "Next"
+msgstr "다음"
+
+#: contents/ui/components/NightLightToggle.qml:9
+#, kde-format
+msgid "Night Light"
+msgstr "야간 조명"
+
+#: contents/ui/components/NightLightToggle.qml:26
+#, kde-format
+msgid "Night Light — Off"
+msgstr "야간 조명 — 꺼짐"
+
+#: contents/ui/components/NightLightToggle.qml:25
+#, kde-format
+msgid "Night Light — On"
+msgstr "야간 조명 — 켜짐"
+
+#: contents/ui/components/NightLightToggle.qml:23
+#, kde-format
+msgid "Night Light — Unavailable"
+msgstr "야간 조명 — 사용할 수 없음"
+
+#: contents/ui/components/BrightnessPage.qml:130
+#, kde-format
+msgid "Night color settings"
+msgstr "야간 색상 설정"
+
+#: contents/ui/components/InhibitSleepToggle.qml:8
+#, kde-format
+msgid "Sleep Blocked"
+msgstr "절전 차단됨"
+
+#: contents/ui/components/InhibitSleepToggle.qml:58
+#, kde-format
+msgid "Sleep Allowed"
+msgstr "절전 허용됨"
+
+#: contents/ui/components/InhibitSleepToggle.qml:58
+#, kde-format
+msgid "Sleep Inhibited"
+msgstr "절전 억제됨"
+
+#: contents/ui/js/funcs.js:18
+#, kde-format
+msgid "Offline"
+msgstr "오프라인"
+
+#: contents/ui/components/Footer.qml:85
+#, kde-format
+msgid "Open System Settings"
+msgstr "시스템 설정 열기"
+
+#: contents/ui/components/NetworkToggle.qml:57
+#, kde-format
+msgid "Open Wi-Fi settings"
+msgstr "Wi-Fi 설정 열기"
+
+#: contents/ui/components/NetworkPage.qml:288
+#, kde-format
+msgid "Password"
+msgstr "암호"
+
+#: contents/ui/components/PowerProfilePage.qml:10
+#, kde-format
+msgid "Power Mode"
+msgstr "전원 모드"
+
+#: contents/ui/components/BatterySaverToggle.qml:35
+#, kde-format
+msgid "Power Mode — Balanced"
+msgstr "전원 모드 — 균형"
+
+#: contents/ui/components/BatterySaverToggle.qml:31
+#, kde-format
+msgid "Power Mode — Performance"
+msgstr "전원 모드 — 최고 성능"
+
+#: contents/ui/components/BatterySaverToggle.qml:33
+#, kde-format
+msgid "Power Mode — Power Saver"
+msgstr "전원 모드 — 절전"
+
+#: contents/ui/components/PowerProfilePage.qml:27
+#: contents/ui/components/BatteryPage.qml:195
+#, kde-format
+msgid "Power Profiles"
+msgstr "전원 프로필"
+
+#: contents/ui/components/BatteryPage.qml:268
+#: contents/ui/components/Footer.qml:95
+#: contents/ui/components/Footer.qml:125
+#, kde-format
+msgid "Power settings"
+msgstr "전원 설정"
+
+#: contents/ui/components/Footer.qml:71
+#, kde-format
+msgid "Power off / Log out"
+msgstr "전원 끄기 / 로그아웃"
+
+#: contents/ui/components/PowerProfilePage.qml:38
+#: contents/ui/components/BatteryPage.qml:206
+#, kde-format
+msgid "Performance"
+msgstr "최고 성능"
+
+#: contents/ui/components/PowerProfilePage.qml:42
+#: contents/ui/components/BatteryPage.qml:210
+#, kde-format
+msgid "Power Saver"
+msgstr "절전"
+
+#: contents/ui/components/DeviceNotifierPage.qml:147
+#, kde-format
+msgid "Not mounted"
+msgstr "마운트되지 않음"
+
+#: contents/ui/components/DeviceNotifierPage.qml:62
+#, kde-format
+msgid "Removable device"
+msgstr "이동식 장치"
+
+#: contents/ui/components/Footer.qml:160
+#, kde-format
+msgid "Restart"
+msgstr "다시 시작"
+
+#: contents/ui/components/ColorSchemeToggle.qml:29
+#, kde-format
+msgid "Switch to dark mode"
+msgstr "다크 모드로 전환"
+
+#: contents/ui/components/ColorSchemeToggle.qml:29
+#, kde-format
+msgid "Switch to light mode"
+msgstr "라이트 모드로 전환"
+
+#: contents/ui/components/Footer.qml:150
+#, kde-format
+msgid "Suspend"
+msgstr "절전"
+
+#: contents/ui/components/VolumeSlider.qml:64
+#, kde-format
+msgid "Test sound"
+msgstr "소리 테스트"
+
+#: contents/ui/components/TouchpadToggle.qml:10
+#, kde-format
+msgid "Touchpad Off"
+msgstr "터치패드 꺼짐"
+
+#: contents/ui/components/TouchpadToggle.qml:10
+#, kde-format
+msgid "Touchpad On"
+msgstr "터치패드 켜짐"
+
+#: contents/ui/components/TouchpadToggle.qml:34
+#, kde-format
+msgid "Touchpad — Disabled"
+msgstr "터치패드 — 사용 안 함"
+
+#: contents/ui/components/TouchpadToggle.qml:34
+#, kde-format
+msgid "Touchpad — Enabled"
+msgstr "터치패드 — 사용함"
+
+#: contents/ui/components/BluetoothPage.qml:38
+#, kde-format
+msgid "Add new device"
+msgstr "새 장치 추가"
+
+#: contents/ui/components/BluetoothToggle.qml:44
+#, kde-format
+msgid "Add new device…"
+msgstr "새 장치 추가…"
+
+#: contents/ui/components/BluetoothToggle.qml:49
+#, kde-format
+msgid "Send file…"
+msgstr "파일 보내기…"
+
+#: contents/ui/components/Footer.qml:100
+#, kde-format
+msgid "Show battery info"
+msgstr "배터리 정보 표시"
+
+#: contents/ui/components/Footer.qml:42
+#, kde-format
+msgid "%1 — %2h %3m remaining"
+msgstr "%1 — %2시간 %3분 남음"
+
+#: contents/ui/components/NotificationsPage.qml:105
+#, kde-format
+msgid "%1m ago"
+msgstr "%1분 전"
+
+#: contents/ui/components/NotificationsPage.qml:106
+#, kde-format
+msgid "%1h ago"
+msgstr "%1시간 전"
+
+#: contents/ui/components/NotificationsPage.qml:107
+#, kde-format
+msgid "%1d ago"
+msgstr "%1일 전"
+
+#: contents/ui/components/MicMuteToggle.qml:29
+#, kde-format
+msgid "Microphone — Active"
+msgstr "마이크 — 활성"
+
+#: contents/ui/components/MicMuteToggle.qml:29
+#, kde-format
+msgid "Microphone — Muted"
+msgstr "마이크 — 음소거"
+
+#: contents/ui/components/NetworkPage.qml:83
+#: contents/ui/components/NetworkPage.qml:275
+#, kde-format
+msgid "Enter the network security key"
+msgstr "네트워크 보안 키 입력"
+
+#: contents/ui/components/NetworkPage.qml:343
+#, kde-format
+msgid "Cancel"
+msgstr "취소"
+
+#: contents/ui/js/funcs.js:22
+#, kde-format
+msgid "Not Connected"
+msgstr "연결되지 않음"
+
+#: contents/ui/js/funcs.js:16
+#, kde-format
+msgid "Unavailable"
+msgstr "사용할 수 없음"
+
+#: contents/ui/components/VolumeSlider.qml:56
+#, kde-format
+msgid "Unmute"
+msgstr "음소거 해제"
+
+#: contents/ui/components/NetworkPage.qml:15
+#, kde-format
+msgid "Wi-Fi is off"
+msgstr "Wi-Fi가 꺼져 있습니다"
+
+#: contents/ui/components/NetworkToggle.qml:28
+#: contents/ui/components/NetworkPage.qml:13
+#, kde-format
+msgid "Wi-Fi"
+msgstr "Wi-Fi"
+
+#: contents/ui/components/NetworkToggle.qml:47
+#, kde-format
+msgid "Wi-Fi — Off"
+msgstr "Wi-Fi — 꺼짐"
+
+#: contents/ui/components/NetworkToggle.qml:47
+#, kde-format
+msgid "Wi-Fi — On"
+msgstr "Wi-Fi — 켜짐"
+
+#: contents/ui/components/ClipboardPage.qml:88
+#, kde-format
+msgid "(empty)"
+msgstr "(비어 있음)"
+
+#: contents/ui/components/NotificationsPage.qml:18
+#, kde-format
+msgid "Notifications"
+msgstr "알림"
+
+#: contents/ui/components/VolumePage.qml:12
+#, kde-format
+msgid "Volume"
+msgstr "음량"
+
+#: contents/ui/components/volume/VolumeMixerSection.qml:17
+#, kde-format
+msgid "Volume Mixer"
+msgstr "볼륨 믹서"
+
+#: contents/ui/components/volume/OutputDeviceSection.qml:18
+#, kde-format
+msgid "Output Device"
+msgstr "출력 장치"
+
+#: contents/ui/components/BrightnessPage.qml:13
+#, kde-format
+msgid "Brightness"
+msgstr "밝기"
+
+#: contents/ui/components/VolumeSlider.qml:69
+#, kde-format
+msgid "Audio settings"
+msgstr "오디오 설정"
+
+#: contents/ui/components/Footer.qml:115
+#, kde-format
+msgid "Sound settings"
+msgstr "사운드 설정"
+
+#: contents/ui/components/volume/InputDeviceSection.qml:77
+#: contents/ui/components/volume/OutputDeviceSection.qml:69
+#, kde-format
+msgid "Unknown device"
+msgstr "알 수 없는 장치"
+
+#: contents/ui/components/volume/VolumeMixerSection.qml:52
+#, kde-format
+msgid "Unknown application"
+msgstr "알 수 없는 프로그램"
+
+#: contents/ui/components/MediaControllerPage.qml:107
+#, kde-format
+msgid "Unknown track"
+msgstr "알 수 없는 트랙"
+
+#: contents/ui/components/MediaControllerPage.qml:116
+#, kde-format
+msgid "Unknown artist"
+msgstr "알 수 없는 아티스트"
+
+#: contents/ui/components/NetworkPage.qml:80
+#: contents/ui/components/NetworkPage.qml:397
+#, kde-format
+msgid "Verifying and connecting"
+msgstr "확인 및 연결 중"
+
+#: contents/ui/components/NetworkToggle.qml:28
+#, kde-format
+msgid "Wi-Fi/网络"
+msgstr "Wi-Fi/네트워크"
+
+#: contents/ui/ActionPanel.qml:99
+#, kde-format
+msgid "Settings"
+msgstr "설정"
+
+#: contents/ui/ActionPanel.qml:105
+#, kde-format
+msgid "Charging — %1%"
+msgstr "충전 중 — %1%"
+
+#: contents/ui/ActionPanel.qml:106
+#, kde-format
+msgid "Discharging — %1%"
+msgstr "방전 중 — %1%"

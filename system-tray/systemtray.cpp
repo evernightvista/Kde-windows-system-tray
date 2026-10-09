@@ -33,9 +33,81 @@
 #include <KAcceleratorManager>
 #include <KActionCollection>
 #include <KSharedConfig>
+#include <KWaylandExtras>
 #include <KWindowSystem>
 
 using namespace Qt::StringLiterals;
+
+// Position a popup menu on Wayland using the xdg-popup anchor/gravity protocol.
+// Without this, menus would appear at the wrong position or with the wrong
+// anchor on Wayland sessions (Bug 385311 and friends). The X11 path falls
+// back to plain QMenu::popup() with global coordinates.
+static void showSystemTrayMenuWayland(QMenu *menu, QQuickItem *trayItem, Plasma::Types::Location location)
+{
+    QWindow *trayWindow = trayItem->window();
+    if (!trayWindow) {
+        qCWarning(SYSTEM_TRAY) << menu << "has no parent window, this should never happen";
+        return;
+    }
+
+    menu->winId();
+    QWindow *menuWindow = menu->windowHandle();
+
+    const QRect anchorRect = trayItem->mapRectToScene(QRectF(QPoint(0, 0), trayItem->size())).toRect();
+
+    Qt::Edges anchor;
+    Qt::Edges gravity;
+    switch (location) {
+    case Plasma::Types::Location::TopEdge:
+        anchor = Qt::BottomEdge;
+        gravity = Qt::BottomEdge;
+
+        if (qGuiApp->isLeftToRight()) {
+            anchor |= Qt::LeftEdge;
+            gravity |= Qt::RightEdge;
+        } else {
+            anchor |= Qt::RightEdge;
+            gravity |= Qt::LeftEdge;
+        }
+        break;
+
+    case Plasma::Types::Location::BottomEdge:
+        anchor = Qt::TopEdge;
+        gravity = Qt::TopEdge;
+
+        if (qGuiApp->isLeftToRight()) {
+            anchor |= Qt::LeftEdge;
+            gravity |= Qt::RightEdge;
+        } else {
+            anchor |= Qt::RightEdge;
+            gravity |= Qt::LeftEdge;
+        }
+        break;
+
+    case Plasma::Types::Location::LeftEdge:
+        anchor = Qt::RightEdge | Qt::TopEdge;
+        gravity = Qt::RightEdge | Qt::BottomEdge;
+        break;
+
+    case Plasma::Types::Location::RightEdge:
+        anchor = Qt::LeftEdge | Qt::TopEdge;
+        gravity = Qt::LeftEdge | Qt::BottomEdge;
+        break;
+
+    default:
+        anchor = Qt::LeftEdge | Qt::BottomEdge;
+        gravity = Qt::RightEdge | Qt::BottomEdge;
+        break;
+    }
+
+    menuWindow->setTransientParent(trayWindow);
+
+    menuWindow->setProperty("_q_waylandPopupAnchorRect", anchorRect);
+    menuWindow->setProperty("_q_waylandPopupAnchor", QVariant::fromValue(anchor));
+    menuWindow->setProperty("_q_waylandPopupGravity", QVariant::fromValue(gravity));
+
+    menu->popup(trayWindow->screen()->geometry().topLeft());
+}
 
 SystemTray::SystemTray(QObject *parent, const KPluginMetaData &data, const QVariantList &args)
     : Plasma::Containment(parent, data, args)
@@ -86,6 +158,15 @@ void SystemTray::initSettingsAndRegistry()
         m_plasmoidRegistry = new PlasmoidRegistry(m_settings, this);
         connect(m_plasmoidRegistry, &PlasmoidRegistry::plasmoidEnabled, this, &SystemTray::startApplet);
         connect(m_plasmoidRegistry, &PlasmoidRegistry::plasmoidStopped, this, &SystemTray::stopApplet);
+        connect(m_plasmoidRegistry, &PlasmoidRegistry::plasmoidDisabled, this, &SystemTray::stopApplet);
+    }
+}
+
+void SystemTray::initRegistry()
+{
+    if (m_plasmoidRegistry && !m_registryInitialized) {
+        m_plasmoidRegistry->init();
+        m_registryInitialized = true;
     }
 }
 
@@ -160,7 +241,7 @@ void SystemTray::restoreContents(KConfigGroup &group)
     }
 
     initSettingsAndRegistry();
-    m_plasmoidRegistry->init();
+    initRegistry();
 }
 
 void SystemTray::showPlasmoidMenu(QQuickItem *appletInterface, int x, int y)
@@ -211,9 +292,7 @@ void SystemTray::showPlasmoidMenu(QQuickItem *appletInterface, int x, int y)
 
     KAcceleratorManager::manage(desktopMenu);
 
-    desktopMenu->winId();
-    desktopMenu->windowHandle()->setTransientParent(appletInterface->window());
-    desktopMenu->popup(pos.toPoint());
+    showSystemTrayMenuWayland(desktopMenu, appletInterface, location());
 }
 
 QPointF SystemTray::popupPosition(QQuickItem *visualParent, int x, int y)
@@ -227,6 +306,27 @@ QPointF SystemTray::popupPosition(QQuickItem *visualParent, int x, int y)
     QQuickWindow *const window = visualParent->window();
     if (window && window->screen()) {
         pos = window->mapToGlobal(pos.toPoint());
+
+        // On Wayland, mapToGlobal returns logical coordinates. Plasma popups
+        // are placed in native surface coordinates by the shell, so we have
+        // to convert to native coordinates ourselves, taking into account the
+        // XwaylandClientsScale setting and the active scale factor.
+        //
+        // We avoid the Qt private QPlatformScreen API here so the project
+        // does not need qt6-qtbase-private-devel to build. The screen's
+        // logical geometry (offset within the virtual desktop) plus the
+        // devicePixelRatio gives a correct native position on single-screen
+        // setups and a good approximation on multi-screen setups where all
+        // screens share the same scale.
+        if (KWindowSystem::isPlatformWayland() && m_xwaylandClientsScale) {
+            const qreal devicePixelRatio = window->devicePixelRatio();
+
+            const QRect geometry = window->screen()->geometry();
+            const QPointF nativeOffset = geometry.topLeft() * devicePixelRatio;
+            const QPointF posInScreen = (pos - geometry.topLeft()) * devicePixelRatio;
+
+            return nativeOffset + posInScreen;
+        }
     }
 
     return pos;
@@ -269,11 +369,20 @@ QQuickItem *SystemTray::appletForPluginId(const QString &pluginId)
 SystemTrayModel *SystemTray::systemTrayModel()
 {
     if (!m_systemTrayModel) {
+        // Ensure settings and registry are initialized before creating the model.
+        // This can be called from QML property binding before init() completes.
+        initSettingsAndRegistry();
+
         m_systemTrayModel = new SystemTrayModel(this);
 
         m_plasmoidModel = new PlasmoidModel(m_settings, m_plasmoidRegistry, m_systemTrayModel);
         connect(this, &SystemTray::appletAdded, m_plasmoidModel, &PlasmoidModel::addApplet);
         connect(this, &SystemTray::appletRemoved, m_plasmoidModel, &PlasmoidModel::removeApplet);
+
+        // Initialize registry after model is created so signals are properly connected
+        initRegistry();
+
+        // Add any applets that already exist
         for (auto applet : applets()) {
             m_plasmoidModel->addApplet(applet);
         }
@@ -342,15 +451,17 @@ void SystemTray::startApplet(const QString &pluginId)
     qCDebug(SYSTEM_TRAY) << "Adding applet:" << pluginId;
 
     if (m_configGroupIds.contains(pluginId)) {
-        Applet *applet = Plasma::PluginLoader::self()->loadApplet(pluginId, m_configGroupIds.value(pluginId), QVariantList());
+        // loadApplet returns a unique_ptr in Plasma 6; keep ownership until we
+        // transfer it into the Containment via addApplet(std::move(...)).
+        auto applet = Plasma::PluginLoader::self()->loadApplet(pluginId, m_configGroupIds.value(pluginId), QVariantList());
         if (!applet) {
             qCWarning(SYSTEM_TRAY) << "Unable to find applet" << pluginId;
             return;
         }
         applet->setProperty("org.kde.plasma:force-create", true);
-        addApplet(applet);
+        addApplet(std::move(applet));
     } else {
-        Applet *applet = createApplet(pluginId, QVariantList() << u"org.kde.plasma:force-create"_s);
+        auto applet = createApplet(pluginId, QVariantList() << u"org.kde.plasma:force-create"_s);
         if (applet) {
             m_configGroupIds[pluginId] = applet->id();
         }
@@ -398,12 +509,20 @@ void SystemTray::activate(const QString &service, QPoint pos, QQuickItem *status
         this,
         [this, service, pos, statusNotifierIcon](bool res) {
             if (!res) {
+                // On error try to invoke the context menu.
+                // Workaround primarily for apps using libappindicator.
                 openContextMenu(service, pos, statusNotifierIcon);
             }
         },
         Qt::SingleShotConnection);
 
-    source->activate(pos.x(), pos.y());
+    QWindow *window = nullptr;
+
+    auto tokenFuture = KWaylandExtras::xdgActivationToken(window, {});
+    tokenFuture.then(source, [source, pos](const QString &token) {
+        source->provideXdgActivationToken(token);
+        source->activate(pos.x(), pos.y());
+    });
 }
 
 void SystemTray::secondaryActivate(const QString &service, QPoint pos)
@@ -415,7 +534,13 @@ void SystemTray::secondaryActivate(const QString &service, QPoint pos)
         return;
     }
 
-    source->secondaryActivate(pos.x(), pos.y());
+    QWindow *window = nullptr;
+
+    auto tokenFuture = KWaylandExtras::xdgActivationToken(window, {});
+    tokenFuture.then(source, [source, pos](const QString &token) {
+        source->provideXdgActivationToken(token);
+        source->secondaryActivate(pos.x(), pos.y());
+    });
 }
 
 void SystemTray::openContextMenu(const QString &service, QPoint pos, QQuickItem *statusNotifierIcon)
@@ -431,22 +556,21 @@ void SystemTray::openContextMenu(const QString &service, QPoint pos, QQuickItem 
         source,
         &StatusNotifierItemSource::contextMenuReady,
         this,
-        [this, statusNotifierIcon, pos](QMenu *menu) {
-            if (menu && !menu->isEmpty()) {
+        [this, statusNotifierIcon = QPointer<QQuickItem>{statusNotifierIcon}](QMenu *menu) {
+            if (statusNotifierIcon && menu && !menu->isEmpty()) {
                 KAcceleratorManager::manage(menu);
-
-                menu->winId();
-                menu->windowHandle()->setTransientParent(statusNotifierIcon->window());
-                menu->popup(pos);
-
-                if (auto item = statusNotifierIcon->window()->mouseGrabberItem()) {
-                    item->ungrabMouse();
-                }
+                showSystemTrayMenuWayland(menu, statusNotifierIcon, location());
             }
         },
         Qt::SingleShotConnection);
 
-    source->contextMenu(pos.x(), pos.y());
+    QWindow *window = nullptr;
+
+    auto tokenFuture = KWaylandExtras::xdgActivationToken(window, {});
+    tokenFuture.then(source, [source, pos](const QString &token) {
+        source->provideXdgActivationToken(token);
+        source->contextMenu(pos.x(), pos.y());
+    });
 }
 
 void SystemTray::scroll(const QString &service, int delta, const QString &direction)
