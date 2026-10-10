@@ -32,11 +32,27 @@ Item {
     // The Action Panel case is content-driven in height: actionPanel is a
     // plain ColumnLayout whose implicitHeight is the real sum of its tiles
     // and sliders. We don't cap it, so the popup grows as tall as needed.
-    readonly property bool compactPopup: systemTrayState.activeApplet || systemTrayState.hiddenItemsRequested
-    Layout.preferredHeight: compactPopup
+    // Whether the popup keeps the full-height (gridUnit * 24) layout: true
+    // while a flyout page is open, while the back-out (PopTransition) is
+    // still sliding that page away, or while the Hidden Items grid is
+    // showing. The window must not shrink while the page is still visible,
+    // otherwise the slide-out gets clipped and looks stiff — the upstream
+    // Plasma 6 system tray keeps a constant popup size for the same reason.
+    readonly property bool keepFullHeight: systemTrayState.activeApplet || container.clearingForBack || systemTrayState.hiddenItemsRequested
+    Layout.preferredHeight: keepFullHeight
         ? Kirigami.Units.gridUnit * 24
         : actionPanel.implicitHeight
     Layout.maximumHeight: -1 // no cap
+    // Animate the height change between the compact Action Panel and a
+    // full-height flyout page, so the popup resizes fluidly instead of
+    // snapping (only while the popup is open).
+    Behavior on Layout.preferredHeight {
+        enabled: systemTrayState.expanded
+        NumberAnimation {
+            duration: 200
+            easing.type: Easing.OutCubic
+        }
+    }
 
     property alias hiddenLayout: hiddenItemsView.layout
     property alias plasmoidContainer: container
@@ -225,7 +241,13 @@ Item {
             id: actionPanelMode
             Layout.fillWidth: true
             Layout.fillHeight: true
-            visible: !systemTrayState.activeApplet
+            // Hidden while the flyout page is being popped back
+            // (clearingForBack): with both this and the StackView visible, the
+            // ColumnLayout would split the popup height between them and the
+            // sliding page would be squeezed into the bottom half and clipped.
+            // Keeping the panel hidden lets the page slide out at full size;
+            // the panel then appears cleanly once the animation finishes.
+            visible: !systemTrayState.activeApplet && !container.clearingForBack
             spacing: 0
 
             HiddenItemsView {

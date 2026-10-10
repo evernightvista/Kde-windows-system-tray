@@ -5,7 +5,7 @@
 
 Name:           kde-windows-system-tray
 Version:        45.0.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Windows 11–style System Tray plasmoid for KDE Plasma 6
 
 License:        LGPL-2.0-or-later
@@ -83,6 +83,9 @@ German, Korean, and French.
 # above; do not list locale files manually to avoid duplicate ownership.
 
 %changelog
+* Sat Oct 10 2026 KairikiFedora <13278297951@sina.cn> - 45.0.0-3
+- Improve Back animations
+
 * Sat Oct 10 2026 KairikiFedora <13278297951@sina.cn> - 45.0.0-2
 - Add Back animations
 
