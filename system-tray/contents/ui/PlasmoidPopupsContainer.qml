@@ -41,6 +41,12 @@ QQC2.StackView {
     property bool mergeFooters: appletHasFooter && activeApplet && activeApplet.fullRepresentationItem && activeApplet.fullRepresentationItem.footer && activeApplet.fullRepresentationItem.footer.visible
     property int footerHeight: mergeFooters ? activeApplet.fullRepresentationItem.footer.height : 0
 
+    // True while a back-out clear(PopTransition) animation is running. Keeps
+    // this container visible (expandedRepresentation binds visible to
+    // `activeApplet || clearingForBack`) so the slide-out animation can play
+    // even though activeApplet has already gone back to null.
+    property bool clearingForBack: false
+
     FlyoutRouter {
         id: flyoutRouter
     }
@@ -57,7 +63,9 @@ QQC2.StackView {
             const name = flyoutRouter.flyoutNameForApplet(activeApplet)
             const comp = themedPages[name]
             if (comp) {
-                (mainStack.empty ? mainStack.push : mainStack.replace)(comp, {
+                // Slide the themed page in from the right (PushTransition);
+                // returning uses clear(PopTransition) below.
+                mainStack.push(comp, {
                     "width": Qt.binding(() => mainStack.width),
                     "height": Qt.binding(() => mainStack._themedContentHeight()),
                     "x": 0,
@@ -65,7 +73,7 @@ QQC2.StackView {
                     "opacity": 1,
                     "KeyNavigation.up": mainStack.KeyNavigation.up,
                     "KeyNavigation.backtab": mainStack.KeyNavigation.backtab
-                }, QQC2.StackView.ReplaceTransition)
+                }, QQC2.StackView.PushTransition)
             }
             return
         }
@@ -90,12 +98,8 @@ QQC2.StackView {
                 }
             }
 
-            let unFlipped = systemTrayState.oldVisualIndex < systemTrayState.newVisualIndex
-            if (Application.layoutDirection !== Qt.LeftToRight) {
-                unFlipped = !unFlipped
-            }
-
-            const isTransitionEnabled = systemTrayState.expanded
+            // Slide the native page in from the right; returning uses
+            // clear(PopTransition) below.
             ;(mainStack.empty ? mainStack.push : mainStack.replace)(activeApplet.fullRepresentationItem, {
                 "width": Qt.binding(() => mainStack.width),
                 "height": Qt.binding(() => mainStack.height),
@@ -104,9 +108,23 @@ QQC2.StackView {
                 "opacity": 1,
                 "KeyNavigation.up": mainStack.KeyNavigation.up,
                 "KeyNavigation.backtab": mainStack.KeyNavigation.backtab
-            }, isTransitionEnabled ? (unFlipped ? QQC2.StackView.PushTransition : QQC2.StackView.PopTransition) : QQC2.StackView.Immediate)
+            }, QQC2.StackView.PushTransition)
         } else {
-            mainStack.clear()
+            // Back-out: slide the current page out to the right (PopTransition)
+            // before the empty stack becomes visible underneath. Hold the
+            // container open until the animation finishes (onBusyChanged).
+            if (!mainStack.empty) {
+                clearingForBack = true
+                mainStack.clear(QQC2.StackView.PopTransition)
+            } else {
+                mainStack.clear()
+            }
+        }
+    }
+
+    onBusyChanged: {
+        if (!busy && clearingForBack) {
+            clearingForBack = false
         }
     }
 

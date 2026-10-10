@@ -5,7 +5,7 @@
 
 Name:           kde-windows-system-tray
 Version:        45.0.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Windows 11–style System Tray plasmoid for KDE Plasma 6
 
 License:        LGPL-2.0-or-later
@@ -83,8 +83,11 @@ German, Korean, and French.
 # above; do not list locale files manually to avoid duplicate ownership.
 
 %changelog
+* Sat Oct 10 2026 KairikiFedora <13278297951@sina.cn> - 45.0.0-2
+- Add Back animations
+
 * Fri Oct 09 2026 KairikiFedora <13278297951@sina.cn> - 45.0.0-1
 - Initial RPM package
 - Windows 11–style System Tray plasmoid for KDE Plasma 6
 - Includes translations for zh_CN, zh_TW, ja, de, ko, fr
-- Uses %find_lang for locale file ownership
+- Uses find_lang for locale file ownership

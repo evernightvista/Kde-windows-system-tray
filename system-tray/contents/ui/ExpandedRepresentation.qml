@@ -260,7 +260,7 @@ Item {
             id: container
             Layout.fillWidth: true
             Layout.fillHeight: true
-            visible: systemTrayState.activeApplet
+            visible: systemTrayState.activeApplet || container.clearingForBack
             Layout.topMargin: mergeHeadings ? 0 : dialog.topPadding
             KeyNavigation.up: pinButton
             KeyNavigation.backtab: pinButton

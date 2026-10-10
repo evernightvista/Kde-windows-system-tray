@@ -28,6 +28,19 @@ QtObject {
     // per the system-cluster/hidden-icons split.
     property bool hiddenItemsRequested: false
 
+    // Snapshot of `hiddenItemsRequested` taken right before an applet was
+    // activated. When the user backs out of that applet (the back button
+    // calls setActiveApplet(null)) we restore the view that was on screen
+    // before the applet opened, instead of always falling through to the
+    // Action Panel. This makes the ExpanderArrow (^) flow behave:
+    //   1. press ^                  -> showHiddenItems()  (hidden grid shown)
+    //   2. tap an entry e.g. Vault  -> setActiveApplet(vault)
+    //   3. press back               -> setActiveApplet(null)
+    // should land back on the hidden grid from step 1, not the Action Panel.
+    // Entering an applet from the Action Panel (e.g. a flyout reached via a
+    // tile's arrow) leaves this as false, so back still returns to the panel.
+    property bool hiddenItemsBeforeActiveApplet: false
+
     //allow expanded change only when activated at least once
     //this is to suppress expanded state change during Plasma startup
     property bool acceptExpandedChange: false
@@ -120,12 +133,19 @@ QtObject {
             expanded = true
         }
 
-        // A real applet (ordinary tray icon, or a cluster detail page
-        // reached via activateFlyout) is now active, so any pending
-        // "show hidden items" request is stale; falling back out of it
-        // (e.g. via the back button) should land on the Action Panel.
+        // An applet is now active (ordinary tray icon, or a cluster detail
+        // page reached via activateFlyout). Stash the view we were on before
+        // opening it and leave the active applet covering that view; when the
+        // user later backs out (setActiveApplet(null)) we restore the stashed
+        // view rather than always dropping to the Action Panel.
         if (applet) {
+            hiddenItemsBeforeActiveApplet = hiddenItemsRequested
             hiddenItemsRequested = false
+        } else {
+            // Back navigation: return to whichever view was showing before
+            // the applet opened (hidden grid or Action Panel).
+            hiddenItemsRequested = hiddenItemsBeforeActiveApplet
+            hiddenItemsBeforeActiveApplet = false
         }
     }
 
@@ -140,6 +160,7 @@ QtObject {
                 activeApplet = null
             }
             hiddenItemsRequested = false
+            hiddenItemsBeforeActiveApplet = false
         }
         acceptExpandedChange = false
         root.expanded = expanded
