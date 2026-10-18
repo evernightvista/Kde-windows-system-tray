@@ -16,7 +16,14 @@
     </entry>
     <entry name="hiddenItems" type="StringList">
       <label>All items that are hidden, forced always in the popup. It's a comma-separated string list of unique identifiers that are either plasmoid plugin ids or StatusNotifier ids.</label>
-      <default></default>
+      <!-- Clipboard and Brightness are hidden by default: Windows 11 keeps
+           these out of the tray proper and surfaces them only in the popup.
+           They stay enabled (see extraItems) so their compact icons still
+           render in the "Show hidden icons" popup, they are simply forced
+           to PassiveStatus so the panel's active grid skips them. Users can
+           still re-show them via the "Show only in popup" combo box in the
+           System Tray settings. -->
+      <default>org.kde.plasma.clipboard,org.kde.plasma.brightness</default>
     </entry>
     <entry name="shownItems" type="StringList">
       <label>All items that are shown. It's a comma-separated string list of unique identifiers that are either plasmoid plugin ids or StatusNotifier ids.</label>
